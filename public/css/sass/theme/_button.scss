@@ -1,0 +1,74 @@
+.btn-purple {
+ 	background-color: $purple;
+ }
+.btn-white {
+ 	@include button($white,$white);
+
+ 	&:hover {
+ 		color: none;
+ 		background-color: $white;
+ 		border: 1px solid $white;
+ 	}
+ }
+.btn-default {
+	background-color: $gray;
+    color: $white;
+    border-color: $gray;
+    @include transition(0.3);
+    @include box-shadow2();
+    
+    &:hover {
+    	background-color: $lightgray;
+	    color: $gray;
+	    border-color: $lightgray;
+    }
+}
+.btn-submit-purple {
+    background-color: $purple;
+    color: $white;
+    border-color: $purple;
+    @include transition(0.3);
+    @include box-shadow2();
+    
+    &:hover {
+        background-color: $lightpurple;
+        color: $white;
+        border-color: $lightpurple;
+    }
+}
+.btn-darkpurple {
+    background-color: $darkpurple;
+    color: $white;
+    border-color: $darkpurple;
+    @include transition(0.3);
+    
+    &:hover {
+        background-color: $purple;
+        color: $white;
+        border-color: $purple;
+    }
+}
+.btn-purple-1 {
+    background-color: $purple;
+    color: $white;
+    border-color: $purple;
+    @include transition(0.3);
+    
+    &:hover,&:focus,&:active {
+        background-color: $darkpurple !important;
+        color: $white;
+        border-color: $darkpurple !important;
+    }
+}
+.btn-lightpurple {
+    background-color: $lightpurple;
+    color: $white;
+    border-color: $lightpurple;
+    @include transition(0.3);
+    
+    &:hover {
+        background-color: $purple !important;
+        color: $white;
+        border-color: $purple !important;
+    }
+}

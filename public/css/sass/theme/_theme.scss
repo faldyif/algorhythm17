@@ -1,0 +1,227 @@
+ol {
+    li {
+        list-style-type: decimal;
+    }
+}
+ul.circle {
+    li {
+        list-style-type: circle;
+    }
+}
+/* --- Navbar --- */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	color: $purple;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: $purple;
+}
+.bottom-line {
+    background-color: $purple;
+}
+
+.navbar-header {
+  @media screen and (min-width: 768px) {
+    padding-top: 10px;
+  }
+}
+/* --- Button --- */
+.btn-algo {
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+.btn-purple, .btn-purple:focus
+{
+    border: 1px solid $purple;
+    color: $white;
+    background: none;
+}
+.btn-purple:hover {
+    background: $purple;
+    color: #fff;
+}
+
+.purpleSec {
+	background-color: $purple;
+}
+.whiteSec {
+    background-color: $white;
+    padding: 20px;
+}
+.flatWhiteSec {
+    background-color: $flatwhite;
+}
+/* --- Nav Pills --- */
+.nav-pills>li>a {
+    @include radius(0px);
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    background: $purple;
+    @include radius(0px);
+}
+/* --- Form --- */
+.btn-submit, .btn-submit:hover, .btn-submit:focus
+{
+    background-color: transparent;
+    border-radius: 60px;
+    color: $purple;
+    font-weight: 400;
+    border: 1px solid $purple;
+    font-size: 14px;
+    padding: 6px 20px;
+}
+.form-control
+{
+    background-color: transparent;
+    border-radius: 0px;
+    color: $purple;
+    border-color: $purple;
+}
+.form-control:focus {
+    border-color: $purple;
+}
+.form-control-bl {
+    border: none;
+    @include no-box-shadow();
+
+    label {
+        font-weight: 500;
+    }
+
+    .control-label {
+        color: $black;
+    }
+}
+.form-black {
+    .form-control {
+        color: $black;
+        border-color: #ccc;
+    }
+    label {
+        font-weight: normal;
+    }
+}
+/***********************************
+homepage 
+***********************************/
+.header,.header-cover{
+    background: no-repeat fixed;
+    @include img-bg();
+    position: relative;
+}
+.header{
+
+    h2 {
+    	position: relative;
+
+    	&:before,&:after {
+    		content: "";
+    		position: absolute;
+    		width: 60px;
+    		height: 2px;
+    		background: $white;
+    		top: 50%;
+		    transform: translateY(-50%);
+    	}
+    	&:before {
+    		left: 0;
+    	}
+    	&:after {
+    		right: 0;
+    	}
+    }
+}
+#timeline {
+	background-color: $flatwhite;
+}
+.register-home {
+	h2 {
+		text-transform: uppercase;
+	}
+}
+.timeline-section {
+    i {
+        padding: 20px;
+        background: $darkpurple;
+        color: white;
+        border-radius: 100%;
+        
+    }
+}
+#footer {
+    .socialMedia {
+        li {
+            display: inline-block;
+            margin: 20px 5px;
+
+            a {
+                border-radius: 100%;
+                color: $gray;
+                border: 2px solid $gray;
+                font-weight: 400;
+                padding: 10px 13px;
+                @include transition(0.3);
+            }
+            a.fb:hover{
+                        background-color: #3b5999;
+                        color: $white;
+                        border: 2px solid #3b5999;
+                    }
+            a.tw:hover{
+                        background-color: #2ac6f7;
+                        color: $white;
+                        border: 2px solid #2ac6f7;
+                    }
+            a.ig:hover{
+                        background-color: #fb3958;
+                        color: $white;
+                        border: 2px solid #fb3958;
+                    }
+        }
+    }
+}
+/***********************************
+dashboard-user 
+***********************************/
+.navbar-fixed-custom {
+    background-color : $black;
+    @include radius(0px);
+    .navbar-nav {
+        li {
+            a {
+                color: $white;
+            }
+        }
+    }
+    button {
+        span {
+            background-color: $white;
+        }
+    }
+}
+aside {
+    background-color: $darkpurple;
+    color: $white;
+    height: 100vh;
+
+    .navbar-default {
+        min-height: auto;
+    }
+
+    #asideNav {
+        a {
+            color: $white;
+        }
+        li {
+            i {
+                text-align: center;
+                width: 30px;
+            }
+        }
+    }
+}
+.contentSide {
+
+    .progressSec {
+        text-align: center;
+    }
+}
