@@ -1,0 +1,144 @@
+/* --- Common reset --- */
+html, body{
+	margin: 0 auto;
+	padding: 0;
+}
+figure {
+	margin:0px;
+	&>img {
+		width: 100%;
+	}
+
+	figcaption {
+		text-align: center;
+	    font-size: 0.75em;
+	    padding: 10px 30px;
+	}
+}
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+li {
+	list-style-type: none;
+
+	a {
+		color: $blue;
+		@include transition(0.3);
+	}
+}
+.containerCenter {
+	position: absolute;
+	overflow: hidden ;
+	top : 50% ;
+	left : 50% ;
+	transform: translate(-50%,-50%); ;
+}
+.beCenter {
+	float: none;
+	margin: auto;
+}
+.noShadow {
+	@include no-box-shadow();
+}
+.fullWidth {
+	width: 100%;
+}
+
+/* --- Margin and Padding --- */
+@for $i from 0 through 6{
+	.mg-#{$i*5}{
+		margin : $i*5px ;
+	}
+	.mg-bt-#{$i*5}{
+		margin-top : $i*5px ;
+		margin-bottom : $i*5px ;
+	}
+	.mg-lr-#{$i*5}{
+		margin-left : $i*5px ;
+		margin-right : $i*5px ;
+	}
+	.mg-t-#{$i*5}{
+		margin-top : $i*5px ;
+	}
+	.mg-b-#{$i*5}{
+		margin-bottom : $i*5px ;
+	}
+	.mg-l-#{$i*5}{
+		margin-left : $i*5px ;
+	}
+	.mg-r-#{$i*5}{
+		margin-right : $i*5px ;
+	}
+}
+
+@for $i from 0 through 6{
+	.pd-#{$i*5}{
+		padding : $i*5px ;
+	}
+	.pd-bt-#{$i*5}{
+		padding-top : $i*5px ;
+		padding-bottom : $i*5px ;
+	}
+	.pd-lr-#{$i*5}{
+		padding-left : $i*5px ;
+		padding-right : $i*5px ;
+	}
+	.pd-t-#{$i*5}{
+		padding-top : $i*5px ;
+	}
+	.pd-b-#{$i*5}{
+		padding-bottom : $i*5px ;
+	}
+	.pd-l-#{$i*5}{
+		padding-left : $i*5px ;
+	}
+	.pd-r-#{$i*5}{
+		padding-right : $i*5px ;
+	}
+}
+
+.noOffset{
+	padding : 0px !important ;
+	margin : 0px !important ;
+}
+.noMag{
+	margin : 0px !important ;
+}
+.noPad{
+	padding : 0px !important ;
+}
+
+/* --- Float --- */
+.floatLeft {
+	float: left !important;
+}
+
+.floatRight {
+	float: right !important;
+}
+
+/* --- align --- */
+.alignLeft {
+	text-align: left !important;
+}
+.alignRight {
+	text-align: right;
+}
+.alignCenter {
+	text-align: center;
+}
+
+/* --- Heading --- */
+h1 {
+	font-size: 3.5em;
+}
+h2 {
+	font-size: 2.5em;
+}
+
+/* --- Button --- */
+.btn {
+	border-radius: 0px;
+}

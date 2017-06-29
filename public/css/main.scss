@@ -1,0 +1,29 @@
+/*
+	Project name : Algorhythm UGM
+	Date created : 12 June 2017
+	Copyright (c) 2017. All Rights Reserved
+
+	FOR Algorhythm UGM ONLY
+ */
+
+$lightpurple: #7fc5f6;
+$purple : #3ba0d9;
+$darkpurple : #2e3b56;
+$lightblue : #025280;
+$blue : #045a8c;
+$lightorange : #f1c40f;
+$orange : #fcaa11;
+$darkorange : #e67e22;
+$white : #ffffff;
+$flatwhite: #f7f7f7;
+$lightgray : #ebebeb;
+$gray: #c5c6c6;
+$black: #282828;
+
+@import 'sass/helpers/_mixin';
+@import 'sass/base/_font';
+@import 'sass/base/_reset';
+@import 'sass/layout/_layout';
+@import 'sass/theme/_button';
+@import 'sass/theme/_theme';
+@import 'sass/layout/_responsive';

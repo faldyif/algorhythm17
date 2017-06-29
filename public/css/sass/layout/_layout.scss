@@ -1,0 +1,167 @@
+.navbar-brand {
+	img {
+		height: 100%;
+	}
+}
+.navbar-fixed-custom{
+	padding: 5px 20px 0px;
+	margin-bottom: 0;
+}
+.navbar-nav {
+	li {
+		&.username {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin-right: 20px;
+		}
+		a {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
+.header {
+	position:relative;
+}
+h2 {
+	&.bnr-sub-title {
+		padding: 10px 0;
+	}
+
+}
+.tab-content {
+	section {
+		padding: 20px 10px;
+	}
+}
+/* --- Homepage --- */
+.header {
+	min-height: 100vh;
+	.bg-color {
+		min-height: 100vh;
+	}
+}
+#event {
+	figure {
+		img {
+			@include img-bg();
+		}
+	}
+	h3 {
+		margin-top: 0px;
+	}
+	.big-mg-bt-sec {
+		margin-bottom: 80px;
+		margin-top: 20px;
+	}
+}
+.register-home {
+	figure {
+		position: relative;
+
+		img{
+			@include img-bg();
+			background-attachment: fixed;
+		}
+
+		.overlay {
+			@include overlay($darkpurple,0.8);
+			top:0;
+		}
+		.containerCenter {
+			width: 80%;
+		}
+	}
+}
+#about {
+	padding-top: 60px;
+}
+.mypills-center {
+	&>ul {
+		display: flex;
+	    justify-content: center;
+	    text-align: center;
+	    align-items: center;
+	}
+}
+.timeline-section {
+	position: relative;
+
+	p {
+		font-size: 0.8em;
+	}
+
+	.line-ver {
+		&:after {
+			content: "";
+		    position: absolute;
+		    height: 100%;
+		    width: 2px;
+		    margin-left: -1px;
+		    background: $gray;
+		    top: 100%;
+		    left: 45%;
+		}
+	}
+}
+#gallery {
+	figure {
+		img {
+			@include img-bg();
+		}
+	}
+}
+/* --- Event-detail --- */
+.header-cover {
+	min-height: 50vh;
+
+	.bg-color {
+		min-height: 50vh;
+	}
+}
+/* --- News-detail --- */
+.news-cover {
+	min-height: 70vh;
+
+	.bg-color {
+		min-height: 70vh;
+	}
+
+	.containerCenter {
+		top : 40%;
+	}
+}
+/* --- Dashboard --- */
+.pd-t-db {
+	padding-top: 62px;
+}
+.aside {
+	position: fixed;
+	#asideNav{
+		li {
+			a {
+				padding: 20px;
+
+				&:hover,&.active,&:focus,&:active {
+					background-color: $purple;
+				}
+			}
+		}
+	}
+}
+.contentSide {
+	min-height: 100vh;
+	padding-left: 0px;
+
+	.progressSec {
+		padding: 0px 20px;
+		margin: 0px 10px;
+	}
+}
+.previewPhoto {
+	img {
+		max-height: 200px;
+	}
+}
