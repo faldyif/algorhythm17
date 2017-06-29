@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Custom class
+use App\User;
+use App\ConcertUser;
+use Session;
+use Illuminate\Support\Facades\Auth;
+
 class AdminConcertUserController extends Controller
 {
     /**
@@ -13,7 +19,8 @@ class AdminConcertUserController extends Controller
      */
     public function index()
     {
-        //
+        $user = ConcertUser::all();
+        return View('admin.user.concert.index')->with('user', $user);
     }
 
     /**
@@ -22,7 +29,7 @@ class AdminConcertUserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {  
         //
     }
 
@@ -45,7 +52,8 @@ class AdminConcertUserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = ConcertUser::find($id);
+        return View('admin.user.concert.show')->with('user', $user);
     }
 
     /**
@@ -79,6 +87,8 @@ class AdminConcertUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        Session::flash('message', 'Berhasil menghapus user!');
+        return redirect('adminalgo17/user/concert');
     }
 }
