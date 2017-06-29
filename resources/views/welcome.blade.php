@@ -1,4 +1,6 @@
+@extends('layouts.visitor')
 
+@section('content')
     <!--HEADER-->
     <div class="header" style="background-image: url('{{ url('img/bg-banner02.jpg') }}');">
       <div class="bg-color">
@@ -120,14 +122,14 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
             <p class="sub-title pad-bt15">Berikut merupakan timeline keseluruhan dari rangkaian acara Algorhythm 2017</p>
             <hr class="bottom-line">
           </div>
-        </div> 
+        </div>
                   <section class="mypills-center">
                     <ul class="nav nav-pills mg-b-20">
                         <li class="active"><a data-toggle="pill" href="#one">Short Film Competition</a></li>
                         <li class=""><a data-toggle="pill" href="#two">Instagram Competition</a></li>
                         <li class=""><a data-toggle="pill" href="#three">Algorhythm Concert</a></li>
                     </ul>
-                  
+
                     <div class="tab-content pd-lr-20">
                         <div id="one" class="tab-pane fade in active">
                           <section class="timeline-section row">
@@ -412,7 +414,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
               </p>
             </section>
           </div>
-        </section>        
+        </section>
       </div>
     </section>
     <!---->
@@ -462,9 +464,12 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                       <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
                     </div>
                 </form>
-              
+
             </div>
           </div>
         </div>
       </div>
     </section>
+
+
+@endsection
