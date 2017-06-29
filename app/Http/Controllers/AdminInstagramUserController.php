@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Custom class
+use App\User;
+use App\InstagramUser;
+use Session;
+use Illuminate\Support\Facades\Auth;
+
 class AdminInstagramUserController extends Controller
 {
     /**
@@ -13,7 +19,8 @@ class AdminInstagramUserController extends Controller
      */
     public function index()
     {
-        //
+        $user = InstagramUser::all();
+        return View('admin.user.instagram.index')->with('user', $user);
     }
 
     /**
@@ -45,7 +52,8 @@ class AdminInstagramUserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = InstagramUser::find($id);
+        return View('admin.user.instagram.show')->with('user', $user);
     }
 
     /**
@@ -79,6 +87,8 @@ class AdminInstagramUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        Session::flash('message', 'Berhasil menghapus user!');
+        return redirect('adminalgo17/user/instagram');
     }
 }
