@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id');
             $table->string('from_instance');
             $table->string('phone');
+            $table->integer('paid_amount');
             $table->rememberToken();
             $table->timestamps();
         });

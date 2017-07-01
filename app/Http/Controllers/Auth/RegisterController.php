@@ -47,11 +47,29 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        if($data['type'] == 1) {
+            // If short film contest
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6',
+                'team_name' => 'required|max:255',
+                'phone' => 'required|max:255',
+                'from_instance' => 'required|max:255',
+                'submitting_slot' => 'required',
+            ]);
+        } else if ($data['type'] == 2) {
+             // If instagram contest
+        } else {
+            // If concert account
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6',
+                'phone' => 'required|max:255',
+                'from_instance' => 'required|max:255',
+            ]);
+        }
     }
 
     /**
@@ -62,10 +80,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        if($data['type'] == 1) {
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'role_id' => '1',
+                'from_instance' => $data['from_instance'],
+                'phone' => $data['phone'],
+                'paid_amount' => 0,
+            ]);
+            \App\ShortFilmUser::create([
+                'user_id' => $user->id,
+                'team_name' => $data['team_name'],
+                'submitting_slot' => $data['submitting_slot'],
+            ]);
+            return $user;
+        } else if ($data['type'] == 2) {
+            
+        } else {
+            // If concert account
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'role_id' => '1',
+                'from_instance' => $data['from_instance'],
+                'phone' => $data['phone'],
+                'paid_amount' => 0,
+            ]);
+        }
     }
 }
