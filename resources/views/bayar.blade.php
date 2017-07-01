@@ -26,7 +26,7 @@
             <li class=""><a href="{{ url('') }}#news">news</a></li>
             <li class=""><a href="{{ url('') }}#about">about</a></li>
             <li class=""><a href="{{ url('') }}#contact">Contact Us</a></li>
-            <li class="active"><a href="{{ url('register') }}">Register</a></li>
+            <li class=""><a href="{{ url('register') }}">Register</a></li>
             <li class=""><a href="{{ url('login') }}">Login</a></li>
               </ul>
             </div>
