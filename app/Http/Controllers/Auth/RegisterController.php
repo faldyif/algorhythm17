@@ -104,7 +104,7 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
-                'role_id' => '1',
+                'role_id' => '3',
                 'from_instance' => $data['from_instance'],
                 'phone' => $data['phone'],
                 'paid_amount' => 0,
