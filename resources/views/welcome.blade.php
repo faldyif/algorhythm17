@@ -73,7 +73,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>S</span>hort Film Competition</h3>
                     <!-- <h3 class="pur">"Nostalgia"</h3> -->
                     <p class="black">Algorhythm Short Film Competition merupakan sebuah kompetisi film pendek yang diperuntukkan bagi seluruh kalangan untuk menggali kreativitas, khasanah budaya yang dimilikinya dan menuangkannya ke dalam rekaman gambar yang mampu bercerita. Dengan mengangkat tema “<strong>Nostalgia</strong>”, diharapkan agar peserta dapat bercerita dan berbagi tentang sebuah kenangan di masa lampau. </p>
-                    <a href="">Learn more ...</a>
+                    <a href="{{ url('short-film') }}">Learn more ...</a>
                   </div>
                 </div>
               </section>
@@ -88,7 +88,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>I</span>nstagram Competition</h3>
                     <!-- <h3 class="pur">"Memorable Place"</h3> -->
                     <p class="black">Algorhythm Instagram Competition merupakan sebuah ajang kompetisi foto melalui sosial media Instagram. Instagram Competition Algorythm 2017 ini mengusung tema “<strong>Memorable Place</strong>”. Kompetisi ini diperuntukkan bagi semua kalangan dan bertujuan untuk mengembangkan kreativitas dalam seni fotografi.</p>
-                    <a href="">Learn more ...</a>
+                    <a href="{{ url('ig') }}">Learn more ...</a>
                   </div>
                 </div>
               </section>
@@ -103,7 +103,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>C</span>oncert</h3>
                     <!-- <h3 class="pur">"A Night To Remember"</h3> -->
                     <p class="black">Kegiatan ini merupakan acara puncak dari ALGORHYTHM 2017. Konser Algorhythm mengangkat tema “<strong>A Night to Remember</strong>” bertujuan untuk untuk merayakan ulang tahun program studi KOMSI, serta menumbuhkan solidaritas antar mahasiswa KOMSI. Dengan adanya konser ini juga diharapkan dapat menciptakan suatu acara dengan suasana yang mengenang dan berkesan bagi seluruh keluarga KOMSI maupun para penonton konser</p>
-                    <a href="">Learn more ...</a>
+                    <a href="{{ url('concert') }}">Learn more ...</a>
                   </div>
                 </div>
               </section>

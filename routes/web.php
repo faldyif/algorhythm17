@@ -14,7 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/ig', function () {
+    return view('event.ig');
+});
+Route::get('/short-film', function () {
+    return view('event.short-film');
+});
+Route::get('/concert', function () {
+    return view('concert.short-film');
+});
 Route::get('/user', function () {
     return view('user.dashboard');
 });
