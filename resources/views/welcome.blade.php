@@ -132,68 +132,102 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
 
                     <div class="tab-content pd-lr-20">
                         <div id="one" class="tab-pane fade in active">
-                          <section class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">10 Juli - 31 Agustus 2017</p>
-                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Pendaftaran</h3>
-                              <p>Pendaftaran Instagram Competition</p>
-                            </div>
-                          </section>
-                          <section class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">1 - 10 September 2017</p>
-                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Proses Seleksi</h3>
-                              <p>Tahap Penjurian &amp Voting Like Terbanyak di akun Instagram @algorhythmugm</p>
-                            </div>
-                          </section>
-                          <section class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">11 September 2017</p>
-                            <div class="col-md-1 col-sm-2 col-xs-2 hidden-mobile">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Pengumuman</h3>
-                              <p>Pengumuman pemenang Instagram Competition Juara 1, 2 dan Like Terbanyak</p>
-                            </div>
-                          </section>
-                        </div>
-                        <div id="two" class="tab-pane fade">
-                          <section class="timeline-section row">
+                          <div class="timeline-section row">
                             <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">17 Juli - 17 Oktober 2017</p>
                             <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Pendaftaran</h3>
-                              <p>Pendaftaran Short Film Competition</p>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Pendaftaran</h3>
+                                <p>Pendaftaran Short Film Competition</p>
+                              </div>
                             </div>
-                          </section>
-                          <section class="timeline-section row">
+                          </div>
+                          <div class="timeline-section row">
                             <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">18 - 23 Oktober 2017</p>
                             <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Proses Seleksi</h3>
-                              <p>Seleksi Administrasi dan Tahap Penjurian untuk masuk ke dalam 10 besar finalis Short Film Competition</p>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Proses Seleksi</h3>
+                                <p>Seleksi Administrasi dan Tahap Penjurian untuk masuk ke dalam 10 besar finalis Short Film Competition</p>
+                              </div>
                             </div>
-                          </section>
-                          <section class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">5 Novomber 2017</p>
+                          </div>
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">25 Oktober 2017</p>
+                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Pengumuman Seleksi dan Penjurian oleh Panitia</h3>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">28 Oktober 2017</p>
+                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Penjurian Finalis oleh Juri</h3>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">4 November 2017</p>
                             <div class="col-md-1 col-sm-2 col-xs-2 hidden-mobile">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec">
-                              <h3 class="mg-t-10">Awarding Night</h3>
-                              <p>Malam Penganugerahan 10 besar finalis Short Film Competition</p>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Awarding Night</h3>
+                                <p>Malam Penganugerahan 10 besar finalis Short Film Competition</p>
+                              </div>
                             </div>
-                          </section>
+                          </div>
+                        </div>
+                        <div id="two" class="tab-pane fade">
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">10 Juli - 31 Agustus 2017</p>
+                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Pendaftaran</h3>
+                                <p>Pendaftaran Instagram Competition</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">1 - 10 September 2017</p>
+                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Proses Seleksi</h3>
+                                <p>Tahap Penjurian &amp Voting Like Terbanyak di akun Instagram @algorhythmugm</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="timeline-section row">
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">11 September 2017</p>
+                            <div class="col-md-1 col-sm-2 col-xs-2 hidden-mobile">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
+                              <div class="pd-lr-15">
+                                <h3 class="mg-t-10">Pengumuman</h3>
+                                <p>Pengumuman pemenang Instagram Competition Juara 1, 2 dan Like Terbanyak</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div id="three" class="tab-pane fade">
                           <h2 class="alignCenter mg-bt-30">Coming Soon!</h2>
