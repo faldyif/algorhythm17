@@ -14,10 +14,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 Auth::routes();
 
 
 =======
+=======
+>>>>>>> dfdcf6a90eeb88dad3436c62343a216ef96a6bf3
 Route::get('/ig', function () {
     return view('event.ig');
 });
@@ -27,6 +30,9 @@ Route::get('/short-film', function () {
 Route::get('/concert', function () {
     return view('concert.short-film');
 });
+<<<<<<< HEAD
+>>>>>>> dfdcf6a90eeb88dad3436c62343a216ef96a6bf3
+=======
 >>>>>>> dfdcf6a90eeb88dad3436c62343a216ef96a6bf3
 Route::get('/user', function () {
     return view('user.dashboard');
