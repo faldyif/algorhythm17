@@ -11,7 +11,8 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    $news = \App\News::all();
+    return view('welcome')->with('news', $news);
 });
 
 Route::get('/ig', function () {
@@ -53,9 +54,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('submission', 'AdminSubmissionController', ['only' => [
             'index'
         ]]);
-        Route::get('/admin/add_news', function () {
-            return view('admin.add_news');
-        });
         Route::get('user-film', function () {
             return view('admin.view-user-film');
         });
@@ -69,4 +67,7 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::resource('news', 'NewsController', ['only' => [
+    'index', 'show'
+]]);
 Route::post('/register-instagram', 'RegisterInstagramCompetitionController@register');

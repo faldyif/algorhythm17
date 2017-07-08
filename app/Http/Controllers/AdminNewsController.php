@@ -74,7 +74,7 @@ class AdminNewsController extends Controller
     */
     public function edit($id)
     {
-        if(Auth::user()->role_id != 1) {
+        if(Auth::user()->role_id != 0) {
             return redirect('dashboard'); 
         }
         $news = News::find($id);
@@ -90,7 +90,7 @@ class AdminNewsController extends Controller
     */
     public function update(Request $request, $id)
     {
-        if(Auth::user()->role_id != 1) {
+        if(Auth::user()->role_id != 0) {
             return redirect('dashboard'); 
         }
         $this->validate($request, [
@@ -122,7 +122,7 @@ class AdminNewsController extends Controller
     */
     public function destroy($id)
     {
-        if(Auth::user()->role_id != 1) {
+        if(Auth::user()->role_id != 0) {
             return redirect('dashboard'); 
         }
         $news = News::find($id);

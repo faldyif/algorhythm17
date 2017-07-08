@@ -29,57 +29,32 @@
     <section class="col-md-12 pd-t-15 pd-lr-15">
       <div class="sec-content-db">
         <div class="div-content-db">
-          <form method="" action="">
-            <h3 class="nomag">Edit Post</h3>
-            <div class="row mg-t-20">
-              <div class="col-md-8">
-                <input type="text" name="title" id="title" placeholder="Enter News Title Here" value="Lorem Ipsum Dolorsit Amet" class="form-control">
-              </div>
-              <div class="col-md-4 text-right">
-                <span>Categories : </span>
-                <label>
-                  <select class="form-control" id="categories">
-                    <option value="1">Categories 1</option>
-                    <option value="2" selected>Categories 2</option>
-                    <option value="3">Categories 3</option>
-                    <option value="4">Categories 4</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-            <div class="row mg-t-20">
-              <div class="col-md-12">
-                <textarea class="tinymce">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </textarea>
-              </div>
-            </div>
-            <div class="row mg-t-20">
-              <div class="col-md-12">
-                <label>
-                                <input type="submit" value="Save Draft" name="" class="btn btn-submit">
-                              </label>
-                              <label>
-                                <input type="submit" value="Preview" name="" class="btn btn-submit">
-                              </label>
-                              <label>
-                                <input type="submit" value="Publish" name="" class="btn btn-lightpurple">
-                              </label>
-              </div>
-            </div>
-          </form>
+          {!! Form::model($news, array('route' => array('news.update', $news->id), 'method' => 'PUT', 'enctype' => 'multipart/form-data')) !!}
+							<h3 class="nomag">Edit Post</h3>
+							<div class="row mg-t-20">
+								<div class="col-md-8">
+									{{ Form::text('title', null, array('class' => 'form-control')) }}
+								</div>
+								<div class="col-md-4 text-right">
+									<span>Image Thumbnail : </span>
+									<label>
+										{{ Form::file('thumbnail' ,array('class' => 'form-control')) }}
+									</label>
+								</div>
+							</div>
+							<div class="row mg-t-20">
+								<div class="col-md-12">
+									{{ Form::textarea('content', null, array('class' => 'tinymce')) }}
+								</div>
+							</div>
+							<div class="row mg-t-20">
+								<div class="col-md-12">
+		                            <label>
+		                            	<input type="submit" value="Publish" name="" class="btn btn-sm btn-info">
+		                            </label>
+								</div>
+							</div>
+						{!! Form::close() !!}
         </div>
       </div>
     </section>

@@ -58,11 +58,11 @@
                                             <label><input type="checkbox" name="" value="1"></label>
                                           </td>
                                             <td>
-                                              <strong><a href="{{ url('adminvocomfest17/news') }}/{{ $key->id }}/edit">{{ $key->title }}</a></strong>
+                                              <strong><a href="{{ url('admin/news') }}/{{ $key->id }}/edit">{{ $key->title }}</a></strong>
                                               <br>
                                               <span>
                                                 <a href="{{ url('news') }}/{{ $key->id }}">View</a> |
-                                                <a href="{{ url('adminvocomfest17/news') }}/{{ $key->id }}/edit">Edit</a> |
+                                                <a href="{{ url('admin/news') }}/{{ $key->id }}/edit">Edit</a> |
                                                 <a href="">Delete</a>
                                               </span>
                                             </td>
