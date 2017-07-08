@@ -5,7 +5,7 @@
  * @author		Cornel Boppart <cornel@bopp-art.com>
  * @copyright	Author
  *
- * @version		2.4.0 (09/04/2017)
+ * @version		2.3.4 (29/12/2015)
  */
 
 ;(function ($) {
@@ -48,15 +48,11 @@
 				classPrefix: 'lightcase-',
 				attrPrefix: 'lc-',
 				transition: 'elastic',
-				transitionOpen: null,
-				transitionClose: null,
 				transitionIn: null,
 				transitionOut: null,
 				cssTransitions: true,
 				speedIn: 250,
 				speedOut: 250,
-				width: null,
-				height: null,
 				maxWidth: 800,
 				maxHeight: 500,
 				forceWidth: false,
@@ -65,16 +61,13 @@
 				fullScreenModeForMobile: true,
 				mobileMatchExpression: /(iphone|ipod|ipad|android|blackberry|symbian)/,
 				disableShrink: false,
-				fixedRatio: true,
 				shrinkFactor: .75,
 				overlayOpacity: .9,
 				slideshow: false,
-				slideshowAutoStart: true,
 				timeout: 5000,
 				swipe: true,
 				useKeys: true,
 				useCategories: true,
-				useAsCollection: false,
 				navigateEndless: true,
 				closeOnOverlayClick: true,
 				title: null,
@@ -137,16 +130,16 @@
 					'navigator.pause': 'Pause'
 				},
 				markup: function () {
-					_self.objects.body.append(
+					$('body').append(
 						_self.objects.overlay = $('<div id="' + _self.settings.idPrefix + 'overlay"></div>'),
 						_self.objects.loading = $('<div id="' + _self.settings.idPrefix + 'loading" class="' + _self.settings.classPrefix + 'icon-spin"></div>'),
 						_self.objects.case = $('<div id="' + _self.settings.idPrefix + 'case" aria-hidden="true" role="dialog"></div>')
 					);
 					_self.objects.case.after(
-						_self.objects.close = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-close"><span>' + _self.settings.labels['close'] + '</span></a>'),
 						_self.objects.nav = $('<div id="' + _self.settings.idPrefix + 'nav"></div>')
 					);
 					_self.objects.nav.append(
+						_self.objects.close = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-close"><span>' + _self.settings.labels['close'] + '</span></a>'),
 						_self.objects.prev = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-prev"><span>' + _self.settings.labels['navigator.prev'] + '</span></a>').hide(),
 						_self.objects.next = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-next"><span>' + _self.settings.labels['navigator.next'] + '</span></a>').hide(),
 						_self.objects.play = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-play"><span>' + _self.settings.labels['navigator.play'] + '</span></a>').hide(),
@@ -168,21 +161,17 @@
 				onInit: {},
 				onStart: {},
 				onFinish: {},
-				onResize: {},
 				onClose: {},
 				onCleanup: {}
-			}, 
-			options,
-			// Load options from data-lc-options attribute
-			_self.origin.data ? _self.origin.data('lc-options') : {});
-
-			_self.objects.document = $('html');
-			_self.objects.body = $('body');
+			}, options);
 
 			// Call onInit hook functions
 			_self._callHooks(_self.settings.onInit);
 
 			_self.objectData = _self._setObjectData(this);
+
+			_self._cacheScrollPosition();
+			_self._watchScrollInteraction();
 
 			_self._addElements();
 			_self._open();
@@ -218,7 +207,6 @@
 		_setObjectData: function (object) {
 		 	var $object = $(object),
 				objectData = {
-				this: $(object),
 				title: _self.settings.title || $object.attr(_self._prefixAttributeName('title')) || $object.attr('title'),
 				caption: _self.settings.caption || $object.attr(_self._prefixAttributeName('caption')) || $object.children('img').attr('alt'),
 				url: _self._determineUrl(),
@@ -227,7 +215,7 @@
 				requestDataType: _self.settings.ajax.dataType,
 				rel: $object.attr(_self._determineAttributeSelector()),
 				type: _self.settings.type || _self._verifyDataType(_self._determineUrl()),
-				isPartOfSequence: _self.settings.useAsCollection || _self._isPartOfSequence($object.attr(_self.settings.attr), ':'),
+				isPartOfSequence: _self._isPartOfSequence($object.attr(_self.settings.attr), ':'),
 				isPartOfSequenceWithSlideshow: _self._isPartOfSequence($object.attr(_self.settings.attr), ':slideshow'),
 				currentIndex: $(_self._determineAttributeSelector()).index($object),
 				sequenceLength: $(_self._determineAttributeSelector()).length
@@ -301,38 +289,23 @@
 		 * @return	{string}	url
 		 */
 		_determineUrl: function () {
-			var	dataUrl = _self._verifyDataUrl(_self._determineLinkTarget()),
+			var dataUrl = _self._verifyDataUrl(_self._determineLinkTarget()),
 				width = 0,
 				density = 0,
-				supportLevel = '',
 				url;
 
 			$.each(dataUrl, function (index, src) {
-				switch (_self._verifyDataType(src.url)) {
-					case 'video':
-						var	video = document.createElement('video'),
-							videoType = _self._verifyDataType(src.url) + '/' + _self._getFileUrlSuffix(src.url);
-
-						// Check if browser can play this type of video format
-						if (supportLevel !== 'probably' && supportLevel !== video.canPlayType(videoType) && video.canPlayType(videoType) !== '') {
-							supportLevel = video.canPlayType(videoType);
-							url = src.url;
-						}
-						break;
-					default:
-						if (
-							// Check density
-							_self._devicePixelRatio() >= src.density &&
-							src.density >= density &&
-							// Check viewport width
-							_self._matchMedia()('screen and (min-width:' + src.width + 'px)').matches &&
-							src.width >= width
-						) {
-							width = src.width;
-							density = src.density;
-							url = src.url;
-						}
-						break;
+				if (
+					// Check density
+					_self._devicePixelRatio() >= src.density &&
+					src.density >= density &&
+					// Check viewport width
+					_self._matchMedia()('screen and (min-width:' + src.width + 'px)') &&
+					src.width >= width
+				) {
+					width = src.width;
+					density = src.density;
+					url = src.url;
 				}
 			});
 
@@ -467,7 +440,7 @@
 						$object.attr(name, value);
 					});
 					break;
-				default:
+				default :
 					$object = $('<iframe></iframe>');
 					$object.attr({
 						'src': _self.objectData.url
@@ -576,10 +549,10 @@
 					break;
 				default:
 					if (_self.objectData.url) {
-						$object.on('load', function () {
+						$object.load(function () {
 							_self._showContent($object);
 						});
-						$object.on('error', function () {
+						$object.error(function () {
 							_self.error();
 						});
 					} else {
@@ -615,7 +588,6 @@
 
 			// Set default dimensions
 			var dimensions = {
-				ratio: 1,
 				objectWidth: $object.attr('width') ? $object.attr('width') : $object.attr(_self._prefixAttributeName('width')),
 				objectHeight: $object.attr('height') ? $object.attr('height') : $object.attr(_self._prefixAttributeName('height'))
 			};
@@ -625,7 +597,7 @@
 				dimensions.maxWidth = parseInt(_self.dimensions.windowWidth * _self.settings.shrinkFactor);
 				dimensions.maxHeight = parseInt(_self.dimensions.windowHeight * _self.settings.shrinkFactor);
 
-				// If the auto calculated maxWidth/maxHeight greather than the user-defined one, use that.
+				// If the auto calculated maxWidth/maxHeight greather than the userdefined one, use that.
 				if (dimensions.maxWidth > _self.settings.maxWidth) {
 					dimensions.maxWidth = _self.settings.maxWidth;
 				}
@@ -641,24 +613,19 @@
 					case 'image':
 					case 'flash':
 					case 'video':
-					case 'iframe':
-					case 'ajax':
-					case 'inline':
-						if (_self.objectData.type === 'image' || _self.settings.fixedRatio === true) {
-							if (dimensions.differenceWidthAsPercent > 100 && dimensions.differenceWidthAsPercent > dimensions.differenceHeightAsPercent) {
-								dimensions.objectWidth = dimensions.maxWidth;
-								dimensions.objectHeight = parseInt(dimensions.objectHeight / dimensions.differenceWidthAsPercent * 100);
-							}
-							if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceHeightAsPercent > dimensions.differenceWidthAsPercent) {
-								dimensions.objectWidth = parseInt(dimensions.objectWidth / dimensions.differenceHeightAsPercent * 100);
-								dimensions.objectHeight = dimensions.maxHeight;
-							}
-							if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceWidthAsPercent < dimensions.differenceHeightAsPercent) {
-								dimensions.objectWidth = parseInt(dimensions.maxWidth / dimensions.differenceHeightAsPercent * dimensions.differenceWidthAsPercent);
-								dimensions.objectHeight = dimensions.maxHeight;
-							}
-							break;
+						if (dimensions.differenceWidthAsPercent > 100 && dimensions.differenceWidthAsPercent > dimensions.differenceHeightAsPercent) {
+							dimensions.objectWidth = dimensions.maxWidth;
+							dimensions.objectHeight = parseInt(dimensions.objectHeight / dimensions.differenceWidthAsPercent * 100);
 						}
+						if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceHeightAsPercent > dimensions.differenceWidthAsPercent) {
+							dimensions.objectWidth = parseInt(dimensions.objectWidth / dimensions.differenceHeightAsPercent * 100);
+							dimensions.objectHeight = dimensions.maxHeight;
+						}
+						if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceWidthAsPercent < dimensions.differenceHeightAsPercent) {
+							dimensions.objectWidth = parseInt(dimensions.maxWidth / dimensions.differenceHeightAsPercent * dimensions.differenceWidthAsPercent);
+							dimensions.objectHeight = dimensions.maxHeight;
+						}
+						break;
 					case 'error':
 						if (!isNaN(dimensions.objectWidth) && dimensions.objectWidth > dimensions.maxWidth) {
 							dimensions.objectWidth = dimensions.maxWidth;
@@ -676,30 +643,17 @@
 			}
 
 			if (_self.settings.forceWidth) {
-				try {
-					dimensions.objectWidth = _self.settings[_self.objectData.type].width;
-				} catch (e) {
-					dimensions.objectWidth = _self.settings.width || dimensions.objectWidth;
-				}
-
-				dimensions.maxWidth = null;
-			}
-			if ($object.attr(_self._prefixAttributeName('max-width'))) {
-				dimensions.maxWidth = $object.attr(_self._prefixAttributeName('max-width'));
+				dimensions.maxWidth = dimensions.objectWidth;
+			} else if ($object.attr(_self._prefixAttributeName('max-width'))) {
+				dimensions.maxWidth =  $object.attr(_self._prefixAttributeName('max-width'));
 			}
 
 			if (_self.settings.forceHeight) {
-				try {
-					dimensions.objectHeight = _self.settings[_self.objectData.type].height;
-				} catch (e) {
-					dimensions.objectHeight = _self.settings.height || dimensions.objectHeight;
-				}
+				dimensions.maxHeight = dimensions.objectHeight;
+			} else if ($object.attr(_self._prefixAttributeName('max-height'))) {
+				dimensions.maxHeight =  $object.attr(_self._prefixAttributeName('max-height'));
+			}
 
-				dimensions.maxHeight = null;
-			}
-			if ($object.attr(_self._prefixAttributeName('max-height'))) {
-				dimensions.maxHeight = $object.attr(_self._prefixAttributeName('max-height'));
-			}
 			_self._adjustDimensions($object, dimensions);
 		},
 
@@ -784,17 +738,6 @@
 			return _self._normalizeUrl(dataUrl.toString());
 		},
 
-			// 
-		/**
-		 * Tries to get the (file) suffix of an url
-		 *
-		 * @param	{string}	url
-		 * @return	{string}
-		 */
-		_getFileUrlSuffix: function (url) {
-			return url.toLowerCase().split('?')[0].split('.')[1];
-		},
-
 		/**
 		 * Verifies the data type of the content to load
 		 *
@@ -818,6 +761,7 @@
 					for (var i = 0; i < suffixArr.length; i++) {
 						var suffix = suffixArr[i].toLowerCase(),
 							regexp = new RegExp('\.(' + suffix + ')$', 'i'),
+							// Verify only the last 5 characters of the string
 							str = url.toLowerCase().split('?')[0].substr(-5);
 
 						if (regexp.test(str) === true || (key === 'inline' && (url.indexOf(suffix) > -1))) {
@@ -852,7 +796,7 @@
 		 */
 		_showContent: function ($object) {
 			// Add data attribute with the object type
-			_self.objects.document.attr(_self._prefixAttributeName('type'), _self.objectData.type);
+			_self.objects.case.attr(_self._prefixAttributeName('type'), _self.objectData.type);
 
 			_self.cache.object = $object;
 			_self._calculateDimensions($object);
@@ -860,7 +804,7 @@
 			// Call onFinish hook functions
 			_self._callHooks(_self.settings.onFinish);
 
-			switch (_self.transition.in()) {
+			switch (_self.settings.transitionIn) {
 				case 'scrollTop':
 				case 'scrollRight':
 				case 'scrollBottom':
@@ -888,17 +832,6 @@
 			// End loading.
 			_self._loading('end');
 			_self.isBusy = false;
-			
-			// Set index of the first item opened
-			if (!_self.cache.firstOpened) {
-				_self.cache.firstOpened = _self.objectData.this;
-			}
-
-			// Fade in the info with delay
-			_self.objects.info.hide();
-			setTimeout(function () {
-			  _self.transition.fade(_self.objects.info, 'in', _self.settings.speedIn);
-			}, _self.settings.speedIn);
 		},
 
 		/**
@@ -909,9 +842,6 @@
 		_processContent: function () {
 			_self.isBusy = true;
 
-			// Fade out the info at first
-			_self.transition.fade(_self.objects.info, 'out', 0);
-
 			switch (_self.settings.transitionOut) {
 				case 'scrollTop':
 				case 'scrollRight':
@@ -920,10 +850,10 @@
 				case 'scrollVertical':
 				case 'scrollHorizontal':
 					if (_self.objects.case.is(':hidden')) {
-						_self.transition.fade(_self.objects.contentInner, 'out', 0);
 						_self.transition.fade(_self.objects.case, 'out', 0, 0, function () {
 							_self._loadContent();
 						});
+						_self.transition.fade(_self.objects.contentInner, 'out', 0);
 					} else {
 						_self.transition.scroll(_self.objects.case, 'out', _self.settings.speedOut, function () {
 							_self._loadContent();
@@ -973,11 +903,8 @@
 
 			// If slideshow is enabled, show play/pause and start timeout.
 			if (_self.isSlideshowEnabled()) {
-				// Only start the timeout if slideshow autostart is enabled and slideshow is not pausing
-				if (
-					(_self.settings.slideshowAutoStart === true || _self.isSlideshowStarted) &&
-					!_self.objects.nav.hasClass(_self.settings.classPrefix + 'paused')
-				) {
+				// Only start the timeout if slideshow is not pausing
+				if (!_self.objects.nav.hasClass(_self.settings.classPrefix + 'paused')) {
 					_self._startTimeout();
 				} else {
 					_self._stopTimeout();
@@ -1111,8 +1038,6 @@
 		 * @return	{void}
 		 */
 		_startTimeout: function () {
-			_self.isSlideshowStarted = true;
-
 			_self.objects.play.hide();
 			_self.objects.pause.show();
 
@@ -1185,15 +1110,6 @@
 			},
 
 			/**
-			 * Verifies if the current item is first item opened.
-			 *
-			 * @return	{boolean}
-			 */
-			isFirstOpened: function () {
-				return _self.objectData.this.is(_self.cache.firstOpened);
-			},
-
-			/**
 			 * Verifies if the current item is last item.
 			 *
 			 * @return	{boolean}
@@ -1243,7 +1159,7 @@
 		 * @return	{string|boolean}	The transition prefix if supported, else false.
 		 */
 		isTransitionSupported: function () {
-			var body = _self.objects.body.get(0),
+			var body = $('body').get(0),
 				isTransitionSupported = false,
 				transitionMapping = {
 					'transition': '',
@@ -1268,18 +1184,6 @@
 		 *
 		 */
 		transition: {
-			/**
-			 * Returns the correct transition type according to the status of interaction.
-			 *
-			 * @return	{string}	Transition type
-			 */
-			in: function () {
-				if (_self.settings.transitionOpen && !_self.cache.firstOpened) {
-					return _self.settings.transitionOpen;
-				}
-				return _self.settings.transitionIn;
-			},
-
 			/**
 			 * Fades in/out the object
 			 *
@@ -1525,9 +1429,29 @@
 
 			_self.dimensions = _self.getViewportDimensions();
 			_self._calculateDimensions(_self.cache.object);
+		},
 
-			// Call onResize hook functions
-			_self._callHooks(_self.settings.onResize);
+		/**
+		 * Caches the actual scroll coordinates.
+		 *
+		 * @return	{void}
+		 */
+		_cacheScrollPosition: function () {
+			var	$window = $(window),
+				$document = $(document),
+				offset = {
+					'top': $window.scrollTop(),
+					'left':  $window.scrollLeft()
+				};
+
+			_self.cache.scrollPosition = _self.cache.scrollPosition || {};
+
+			if ($document.width() > $window.width()) {
+				_self.cache.scrollPosition.left = offset.left;
+			}
+			if ($document.height() > $window.height()) {
+				_self.cache.scrollPosition.top = offset.top;
+			}
 		},
 
 		/**
@@ -1546,6 +1470,37 @@
 		 */
 		_unwatchResizeInteraction: function () {
 			$(window).off('resize', _self.resize);
+		},
+
+		/**
+		 * Watches for any scroll interaction and caches the new position.
+		 *
+		 * @return	{void}
+		 */
+		_watchScrollInteraction: function () {
+			$(window).scroll(_self._cacheScrollPosition);
+		},
+
+		/**
+		 * Stop watching any scroll interaction related to _self.
+		 *
+		 * @return	{void}
+		 */
+		_unwatchScrollInteraction: function () {
+			$(window).off('scroll', _self._cacheScrollPosition);
+		},
+
+		/**
+		 * Restores to the original scoll position before
+		 * lightcase got initialized.
+		 *
+		 * @return	{void}
+		 */
+		_restoreScrollPosition: function () {
+			$(window)
+				.scrollTop(parseInt(_self.cache.scrollPosition.top))
+				.scrollLeft(parseInt(_self.cache.scrollPosition.left))
+				.resize();
 		},
 
 		/**
@@ -1578,7 +1533,6 @@
 					_self._switchToFullScreenMode();
 				}
 			}
-
 			if (!_self.settings.transitionIn) {
 				_self.settings.transitionIn = _self.settings.transition;
 			}
@@ -1586,7 +1540,7 @@
 				_self.settings.transitionOut = _self.settings.transition;
 			}
 
-			switch (_self.transition.in()) {
+			switch (_self.settings.transitionIn) {
 				case 'fade':
 				case 'fadeInline':
 				case 'elastic':
@@ -1617,7 +1571,7 @@
 					break;
 			}
 
-			_self.objects.document.addClass(_self.settings.classPrefix + 'open');
+			$('html').addClass(_self.settings.classPrefix + 'open');
 			_self.objects.case.attr('aria-hidden', 'false');
 		},
 
@@ -1631,7 +1585,6 @@
 
 			if (_self.isSlideshowEnabled()) {
 				_self._stopTimeout();
-				_self.isSlideshowStarted = false;
 				_self.objects.nav.removeClass(_self.settings.classPrefix + 'paused');
 			}
 
@@ -1640,20 +1593,19 @@
 			_self._unbindEvents();
 
 			_self._unwatchResizeInteraction();
+			_self._unwatchScrollInteraction();
 
 			$('html').removeClass(_self.settings.classPrefix + 'open');
 			_self.objects.case.attr('aria-hidden', 'true');
 
 			_self.objects.nav.children().hide();
-			_self.objects.close.hide();
+
+			_self._restoreScrollPosition();
 
 			// Call onClose hook functions
 			_self._callHooks(_self.settings.onClose);
 
-			// Fade out the info at first
-			_self.transition.fade(_self.objects.info, 'out', 0);
-
-			switch (_self.settings.transitionClose || _self.settings.transitionOut) {
+			switch (_self.settings.transitionOut) {
 				case 'fade':
 				case 'fadeInline':
 				case 'scrollTop':
@@ -1743,7 +1695,7 @@
 			_self.objects.play.hide();
 			_self.objects.pause.hide();
 
-			_self.objects.document.removeAttr(_self._prefixAttributeName('type'));
+			_self.objects.case.removeAttr(_self._prefixAttributeName('type'));
 			_self.objects.nav.removeAttr(_self._prefixAttributeName('ispartofsequence'));
 
 			_self.objects.contentInner.empty().hide();
