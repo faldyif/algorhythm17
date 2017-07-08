@@ -13,9 +13,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 Auth::routes();
 
 
+=======
+Route::get('/ig', function () {
+    return view('event.ig');
+});
+Route::get('/short-film', function () {
+    return view('event.short-film');
+});
+Route::get('/concert', function () {
+    return view('concert.short-film');
+});
+>>>>>>> dfdcf6a90eeb88dad3436c62343a216ef96a6bf3
 Route::get('/user', function () {
     return view('user.dashboard');
 });
