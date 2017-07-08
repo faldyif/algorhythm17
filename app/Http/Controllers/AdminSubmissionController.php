@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use Session;
+use Illuminate\Support\Facades\Auth;
+
 class AdminSubmissionController extends Controller
 {
     /**
@@ -13,7 +17,11 @@ class AdminSubmissionController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::user()->role_id != 0) {
+            return redirect('home'); 
+        }
+        $submission = Submission::latest()->get();
+        return View('admin.submission')->with('submission', $submission);
     }
 
     /**
@@ -79,6 +87,13 @@ class AdminSubmissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::user()->role_id != 0) {
+            return redirect('home'); 
+        }
+        $submission = Submission::find($id);
+        $submission->delete();
+
+        Session::flash('message', 'Submission berhasil dihapus!');
+        return redirect('admin/submission');
     }
 }

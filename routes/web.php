@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
 
 Route::get('/user', function () {
     return view('user.dashboard');
@@ -24,9 +25,51 @@ Route::get('/user/payment', function () {
 Route::get('/user/upload', function () {
     return view('user.upload');
 });
-Route::get('/admin', function () {
-    return view('admin.dashboard');
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/', function () {
+            if(Auth::user()->role_id != 1) {
+                return redirect('home'); 
+            }
+            return view('admin.dashboard');
+        });
+        Route::resource('user', 'AdminUserController', ['only' => [
+            'index', 'show'
+            ]]);
+        Route::resource('payment', 'AdminPaymentController', ['only' => [
+            'index'
+            ]]);
+        Route::resource('news', 'AdminNewsController', ['only' => [
+            'index', 'show', 'create', 'edit', 'store', 'update'
+            ]]);
+        Route::resource('submission', 'AdminSubmissionController', ['only' => [
+            'index'
+            ]]);
+        Route::resource('semnas', 'AdminSemnasController', ['only' => [
+            'index', 'create', 'store'
+            ]]);
+        Route::get('/admin', function () {
+            return view('admin.dashboard');
+        });
+        Route::get('/admin/news', function () {
+            return view('admin.news');
+        });
+        Route::get('/admin/submission', function () {
+            return view('admin.submission');
+        });
+        Route::get('/admin/add_news', function () {
+            return view('admin.add_news');
+        });
+        Route::get('user-film', function () {
+            return view('admin.view-user-film');
+        });
+        Route::get('user-concert', function () {
+            return view('admin.view-user-concert');
+        });
+        Route::get('user/delete/{id}', 'AdminUserController@destroy');
+    });
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

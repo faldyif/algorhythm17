@@ -26,4 +26,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function user() {
+        if($this->role_id == 1)
+        {
+            return $this->hasOne('App\ShortFilmUser', 'user_id');
+        }
+    }
+
+    public function getKategori() {
+        if($this->role_id == 1)
+        {
+            return "Short Movie Competition";
+        }
+        else
+        {
+            return "Concert Competition";
+        }
+    }
 }

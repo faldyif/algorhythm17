@@ -1,5 +1,7 @@
+<?php
+$users = \App\User::whereIn('role_id', [1,3])
+?>
 @extends('layouts.admin')
-
 @section('content')
 
   <!-- aside -->
@@ -32,7 +34,7 @@
               <section class="progressSec">
                 <h2><i class="fa fa-film pur"></i></h2>
                 <h4 class="bold">Movie Contest</h4>
-                <p class="gray">Pendaftar : <span class="black">200</span></p>
+                <p class="gray">Pendaftar : <span class="black">{{ \App\User::where('role_id', 1)->count() }} </span></p>
               </section>
             </div>
             <div class="col-md-4">
@@ -46,7 +48,7 @@
               <section class="progressSec">
                 <h2><i class="fa fa-star  pur"></i></h2>
                 <h4 class="bold">Concert</h4>
-                <p class="gray">Pendaftar : <span class="black">-</span></p>
+                <p class="gray">Pendaftar : <span class="black">{{ \App\User::where('role_id', 3)->count() }}</span></p>
               </section>
             </div>
           </section>
@@ -82,36 +84,19 @@
 												</tr>
 											</thead>
 											<tbody>
+											@foreach(\App\User::whereIn('role_id', [1,3])->limit(10)->latest()->get() as $key)
 												<tr>
-													<td>1</td>
-													<td>John</td>
-													<td>Short Film Competition</td>
-													<td><span class="label label-success">Finalist</span></td>
+													<td>{{ $loop->iteration }}</td>
+													<td>{{ $key->name }}</td>
+													<td>{{ $key->getKategori() }}</td>
+													<td>
+													@if($key->paid_amount == -1)
+													<span class="label label-default">Belum Bayar</span></td>
+													@elseif($key->paid_amount == 1)
+													<span class="label label-success">Sudah Bayar</span></td>
+													@endif
 												</tr>
-												<tr>
-													<td>2</td>
-													<td>James</td>
-													<td>Instagram Competition</td>
-													<td><span class="label label-default">Registered</span></td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>David</td>
-													<td>Concert</td>
-													<td><span class="label label-warning">Paid</span></td>
-												</tr>
-												<tr>
-													<td>4</td>
-													<td>Team Anda</td>
-													<td>Short Film Competition</td>
-													<td><span class="label label-confirm">Confirmed</span></td>
-												</tr>
-												<tr>
-													<td>5</td>
-													<td>Team Kita</td>
-													<td>Short Film Competition</td>
-													<td><span class="label label-info">Batch 1 Passed</span></td>
-												</tr>
+											@endforeach
 											</tbody>
 										</table>
 									</div>
@@ -128,34 +113,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>1</td>
-													<td>Grafika </td>
-													<td>Concert</td>
-													<td>50.000,00 IDR</td>
-													<td>Paid</td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>Team Kita</td>
-													<td>Short Film Competition</td>
-													<td>100.000,00 IDR</td>
-													<td>Registered</td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>Team Anda</td>
-													<td>Short Film Competition</td>
-													<td>100.000,00 IDR</td>
-													<td>Paid</td>
-												</tr>
-												<tr>
-													<td>4</td>
-													<td>Denise</td>
-													<td>Instagram Competition</td>
-													<td>20.000,00 IDR</td>
-													<td>Confirmed</td>
-												</tr>
+												
 											</tbody>
 										</table>
 									</div>
