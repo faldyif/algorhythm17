@@ -43,28 +43,16 @@ Route::group(['prefix' => 'admin'], function () {
         });
         Route::resource('user', 'AdminUserController', ['only' => [
             'index', 'show'
-            ]]);
+        ]]);
         Route::resource('payment', 'AdminPaymentController', ['only' => [
             'index'
-            ]]);
+        ]]);
         Route::resource('news', 'AdminNewsController', ['only' => [
             'index', 'show', 'create', 'edit', 'store', 'update'
-            ]]);
+        ]]);
         Route::resource('submission', 'AdminSubmissionController', ['only' => [
             'index'
-            ]]);
-        Route::resource('semnas', 'AdminSemnasController', ['only' => [
-            'index', 'create', 'store'
-            ]]);
-        Route::get('/admin', function () {
-            return view('admin.dashboard');
-        });
-        Route::get('/admin/news', function () {
-            return view('admin.news');
-        });
-        Route::get('/admin/submission', function () {
-            return view('admin.submission');
-        });
+        ]]);
         Route::get('/admin/add_news', function () {
             return view('admin.add_news');
         });
