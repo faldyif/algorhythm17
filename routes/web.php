@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
             return view('admin.view-user-concert');
         });
         Route::get('user/delete/{id}', 'AdminUserController@destroy');
+        Route::get('news/delete/{id}', 'AdminNewsController@destroy');
     });
 });
 
