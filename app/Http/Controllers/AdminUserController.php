@@ -18,7 +18,7 @@ class AdminUserController extends Controller {
             return redirect('home'); 
         }
         $team = $this->data['pages'] = User::whereIn('role_id', [1, 3])->paginate(5);
-        return View('admin.user')->with('user',$team);
+        return View('admin.user.user')->with('user',$team);
 	}
 
 	public function create()
@@ -41,9 +41,9 @@ class AdminUserController extends Controller {
     {
         $team = User::find($id);
         if(User::find($id)->role_id == 1) {
-            return View('admin.view-user-film')->with('user', $team);
+            return View('admin.user.view-user-film')->with('user', $team);
         } else if(User::find($id)->role_id == 3) {
-            return View('admin.view-user-concert')->with('user', $team); 
+            return View('admin.user.view-user-concert')->with('user', $team); 
         }
     }
 
