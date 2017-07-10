@@ -80,7 +80,8 @@
               <div id="four" class="tab-pane fade">
                 <section>
                   <h3>Alur Pendaftaran</h3>
-                  <p>Delenit utroque vivendo est ea. Vim autem virtute concludaturque id. Cu ferri oblique has. At sed impedit apeirian ullamcorper, eum cu amet viris. Duo alia causae vituperatoribus ea, salutatus adolescens conclusionemque qui an. Illum euripidis eu vix.</p>
+                  <h5>Coming really soon!</h5>
+                  <!-- <p>Delenit utroque vivendo est ea. Vim autem virtute concludaturque id. Cu ferri oblique has. At sed impedit apeirian ullamcorper, eum cu amet viris. Duo alia causae vituperatoribus ea, salutatus adolescens conclusionemque qui an. Illum euripidis eu vix.</p>
                   <h4>Heading</h4>
                   <ol>
                     <li>Vix eu etiam mediocrem</li>
@@ -92,7 +93,7 @@
                       </ul>
                     </li>
                     <li>Aliquam principes deterruisset cum et, vel an eius equidem</li>
-                  </ol>
+                  </ol> -->
                 </section>
               </div>
           </div>
