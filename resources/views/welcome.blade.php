@@ -313,66 +313,22 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
             <p class="sub-title pad-bt15">Semua informasi &amp berita mengenai rangkaian Algorhythm 2017 ada di sini!</p>
             <hr class="bottom-line">
           </div>
+          @foreach($news as $key)
           <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 mg-b-30">
             <div class="blog-sec">
               <div class="blog-img">
                 <a href="">
-                  <img src="{{ url('img/blog01.jpg') }}" class="img-responsive">
+                  <img src="{{ url('storage/news_thumbs') }}/{{ $key->thumbnail }}" class="img-responsive">
                 </a>
               </div>
               <div class="blog-info">
-                <h2>This is Lorem ipsum heading.</h2>
-                <div class="blog-comment">
-                    <p>Posted In: <span>Legal Advice</span></p>
-                    <p>
-                      <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
-                      <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p class="pd-bt-10">We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to enforce those laws all the time. we always want to help people cordially.</p>
+                <h2>{{ $key->title }}</h2>
+                    <p>Posted In: <span>{{ $key->created_at->format('F jS, Y') }}</span></p>
                 <a href="" class="read-more">Read more →</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 mg-b-30">
-            <div class="blog-sec">
-              <div class="blog-img">
-                <a href="">
-                  <img src="{{ url('img/blog02.jpg') }}" class="img-responsive">
-                </a>
-              </div>
-              <div class="blog-info">
-                <h2>This is Lorem ipsum heading.</h2>
-                <div class="blog-comment">
-                    <p>Posted In: <span>Legal Advice</span></p>
-                    <p>
-                      <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
-                      <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p class="pd-bt-10">We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to enforce those laws all the time. we always want to help people cordially.</p>
-                <a href="" class="read-more">Read more →</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 mg-b-30">
-            <div class="blog-sec">
-              <div class="blog-img">
-                <a href="">
-                  <img src="{{ url('img/blog03.jpg') }}" class="img-responsive">
-                </a>
-              </div>
-              <div class="blog-info">
-                <h2>This is Lorem ipsum heading.</h2>
-                <div class="blog-comment">
-                    <p>Posted In: <span>Legal Advice</span></p>
-                    <p>
-                      <span><a href="#"><i class="fa fa-comments"></i></a> 15</span>
-                      <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p class="pd-bt-10">We cannot expect people to have respect for laws and orders until we teach respect to those we have entrusted to enforce those laws all the time. we always want to help people cordially.</p>
-                <a href="" class="read-more">Read more →</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>

@@ -33,7 +33,7 @@
           <a href="{{ url('admin/news/create') }}" class="btn btn-purple-1">Add News <i class="fa fa-plus"></i></a>
           <br>
         <form>
-          <p class="mg-bt-10"> All {{ $news->count() }} | <a href="">Published</a> (0) | <a href="">Draft</a> (0)</p>
+          <p class="mg-bt-10"> All ({{ $news->count() }})</p>
           <!-- NEWS TABLE -->
           <div class="panel panel-default">
                         <div class="panel-heading">
@@ -41,27 +41,6 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                              <div class="row nomag">
-                                <div class="col-md-6 nopad">
-                                  <label>
-                                    <select class="form-control input-sm">
-                                      <option value="5">5</option>
-                                      <option value="10">10</option>
-                                      <option value="15">15</option>
-                                      <option value="20">20</option>
-                                    </select>
-                                  </label>
-                                    <span>records per page</span>
-                                </div>
-                                <div class="col-md-6 nopad text-right">
-                                  <label>
-                                    <input type="text" id="input-search" name="" class="form-control input-sm">
-                                  </label>
-                                  <label>
-                                    <input type="submit" value="Search" name="" class="btn btn-purple-1">
-                                  </label>
-                                </div>
-                              </div>
                                 <table class="table table-striped table-bordered table-hover" id="news-table">
                                     <thead>
                                         <tr>
@@ -79,11 +58,11 @@
                                             <label><input type="checkbox" name="" value="1"></label>
                                           </td>
                                             <td>
-                                              <strong><a href="{{ url('adminvocomfest17/news') }}/{{ $key->id }}/edit">{{ $key->title }}</a></strong>
+                                              <strong><a href="{{ url('admin/news') }}/{{ $key->id }}/edit">{{ $key->title }}</a></strong>
                                               <br>
                                               <span>
                                                 <a href="{{ url('news') }}/{{ $key->id }}">View</a> |
-                                                <a href="{{ url('adminvocomfest17/news') }}/{{ $key->id }}/edit">Edit</a> |
+                                                <a href="{{ url('admin/news') }}/{{ $key->id }}/edit">Edit</a> |
                                                 <a href="">Delete</a>
                                               </span>
                                             </td>
@@ -104,16 +83,6 @@
                                 <div class="col-md-6 nopad">
                                   <span>Showing 1 to {{ $news->count() }} from {{ $news->count() }} entries</span>
                                 </div>
-                                <div class="col-md-6 nopad text-right">
-                                  <ul class="pagination nomag">
-                                    <li class="disabled"><a href="#">Prev</a></li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li><a href="#">Next</a></li>
-                    </ul>
                                 </div>
                               </div>
                             </div>

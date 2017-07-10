@@ -37,15 +37,8 @@
       									<input type="text" name="title" id="title" placeholder="Enter News Title Here" class="form-control">
       								</div>
       								<div class="col-md-4 text-right">
-      									<span>Categories : </span>
-      									<label>
-      										<select class="form-control" id="categories" name="categories">
-      											<option value="1">Categories 1</option>
-      											<option value="2">Categories 2</option>
-      											<option value="3">Categories 3</option>
-      											<option value="4">Categories 4</option>
-      										</select>
-      									</label>
+                        Thumbnail:
+      									<input type="file" name="thumbnail" id="thumbnail" placeholder="Thumbnail" class="form-control">
       								</div>
       							</div>
       							<div class="row mg-t-20">
@@ -56,12 +49,6 @@
       							</div>
       							<div class="row mg-t-20">
       								<div class="col-md-12">
-      									<label>
-                          <input type="submit" value="Save Draft" name="" class="btn btn-submit">
-                        </label>
-                        <label>
-                          <input type="submit" value="Preview" name="" class="btn btn-submit">
-                        </label>
                         <label>
                           <input type="submit" value="Publish" name="" class="btn btn-lightpurple">
                         </label>
