@@ -26,8 +26,12 @@
                 <li class=""><a href="#news">news</a></li>
                 <li class=""><a href="#about">about</a></li>
                 <li class=""><a href="#contact">Contact Us</a></li>
+                @if(Auth::guest())
                 <li class=""><a href="{{ url('register') }}">Register</a></li>
                 <li class=""><a href="{{ url('login') }}">Login</a></li>
+                @else
+                <li class=""><a href="{{ url('user') }}">Dashboard</a></li>
+                @endif
               </ul>
             </div>
           </div>

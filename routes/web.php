@@ -24,15 +24,10 @@ Route::get('/concert', function () {
     return view('concert.short-film');
 });
 
-Route::get('/user', function () {
-    return view('user.dashboard');
-});
-Route::get('/user/payment', function () {
-    return view('user.payment');
-});
-Route::get('/user/upload', function () {
-    return view('user.upload');
-});
+Route::get('/user', 'UserController@index');
+Route::get('/user/payment', 'UserController@payment');
+Route::get('/user/upload', 'UserController@upload');
+
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function () {
