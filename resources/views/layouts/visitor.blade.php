@@ -62,7 +62,6 @@
     <script src="{{ url('js/jquery.bxslider.min.js') }}"></script>
     <script src="{{ url('js/lightcase.js') }}"></script>
     <script src="{{ url('js/custom.js') }}"></script>
-    <script src="{{ url('contactform/contactform.js') }}"></script>
     
   </body>
 </html>

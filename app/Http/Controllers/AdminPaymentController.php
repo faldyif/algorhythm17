@@ -28,7 +28,7 @@ class AdminPaymentController extends Controller
         // $pay = DB::table('payment_confirmations')->paginate(10);
         // return View('admin.payment')->with('a', $pay);
         $payment_query = DB::table('payment_confirmations')->paginate(10);
-        return view('admin.payment', ['payment' => $payment_query]);
+        return view('admin.payment.index', ['payment' => $payment_query]);
     }
 
     /**
