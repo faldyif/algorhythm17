@@ -49,7 +49,9 @@
               <ul class="nav nav-db">
                 <li><a class="" href="{{ url('user') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                 <li><a class="active" href="{{ url('user/payment') }}"><i class="fa fa-credit-card-alt"></i><span>Payment</span></a></li>
+                @if($user->isPaymentDone())
                 <li><a class="" href="{{ url('user/upload') }}"><i class="fa fa-upload"></i><span>Upload</span></a></li>
+                @endif
               </ul>
             </div>
         </nav>
