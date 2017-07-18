@@ -25,14 +25,22 @@ Route::get('/concert', function () {
     return view('event.concert');
 });
 
-Route::get('/user', 'UserController@index');
-Route::get('/user/payment', 'UserController@payment');
-Route::get('/user/upload', 'UserController@upload');
+Route::group(['prefix' => 'user'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+
+        Route::get('/', 'UserDashboardController@dashboard');
+        Route::get('payment', 'UserDashboardController@payment');
+        Route::get('upload', 'UserDashboardController@submission');
+        Route::post('payment', 'UserDashboardController@storePaymentConfirmation')->name('payment.upload');
+        Route::post('upload', 'UserDashboardController@storeSubmission')->name('submission.upload');
+
+    });
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function () {
-            if(Auth::user()->role_id != 1) {
+            if(Auth::user()->role_id != 0) {
                 return redirect('home'); 
             }
             return view('admin.dashboard');
@@ -56,6 +64,7 @@ Route::group(['prefix' => 'admin'], function () {
             return view('admin.view-user-concert');
         });
         Route::get('user/delete/{id}', 'AdminUserController@destroy');
+        Route::get('news/delete/{id}', 'AdminNewsController@destroy');
     });
 });
 

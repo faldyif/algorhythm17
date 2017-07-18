@@ -72,7 +72,7 @@
 			                            	</thead>
 			                            	<tbody>
 			                            	<?php $it = 1; ?>
-			                            	@foreach($submission as $key)
+			                            	@foreach($movie_submission as $key)
 			                            		<tr>
 			                            			<td>{{ $it++ }}</td>
 			                            			<td>{{ \App\User::where('id', $key->user_id)->first()->name }}</td>
@@ -85,7 +85,6 @@
 			                            			</td>
 			                            		</tr>
 			                            	@endforeach
-			                            	{!! $submission->render() !!}
 			                            	</tbody>
 			                            </table>
 			                            <div class="row nomag pd-b-10">

@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url('css/animate.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url('css/baker-theme.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url('css/algorhythm-style.css') }}">
+  <link rel="stylesheet" href="{{ url('css/sweetalert.css') }}">
     <!-- =======================================================
         Theme Name: Baker
         Theme URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
@@ -60,6 +61,8 @@
     <script src="{{ url('js/jquery.bxslider.min.js') }}"></script>
     <script src="{{ url('js/custom.js') }}"></script>
     <script src="{{ url('contactform/contactform.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/sweetalert.min.js') }}"></script>
 
   </body>
 </html>

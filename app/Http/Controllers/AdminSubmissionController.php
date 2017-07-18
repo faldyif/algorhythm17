@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Pagination\Paginator;
 
 use App\User;
+use App\MovieSubmission;
 use Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,8 +22,8 @@ class AdminSubmissionController extends Controller
         if(Auth::user()->role_id != 0) {
             return redirect('home'); 
         }
-        $submission = Submission::latest()->get();
-        return View('admin.submission')->with('submission', $submission);
+        $movie_submission = MovieSubmission::latest()->get();
+        return View('admin.submission.index')->with('movie_submission', $movie_submission);
     }
 
     /**
