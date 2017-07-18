@@ -22,7 +22,7 @@ Route::get('/short-film', function () {
     return view('event.short-film');
 });
 Route::get('/concert', function () {
-    return view('concert.short-film');
+    return view('event.concert');
 });
 
 Route::get('/user', 'UserController@index');

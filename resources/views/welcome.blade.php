@@ -250,42 +250,42 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
             <hr class="bottom-line">
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port01.jpg') }}" data-rel="lightcase:galleryCollection" title="Vix eu etiam mediocrem">
+            <a href="{{ url('img/galeri-1.jpg') }}" data-rel="lightcase:galleryCollection" title="Vix eu etiam mediocrem">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-1.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port02.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-2.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-2.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port03.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-3.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-3.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port04.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-4.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-4.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port05.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-5.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-5.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port06.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-6.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-6.jpg') }}');">
               </figure>
@@ -297,7 +297,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
     <!---->
     <section class="register-home wow fadeInUp delay-05s hidden-mobile">
       <figure>
-        <img src="{{ url('img/bg2.png') }}" style="background-image: url('{{ url('img/port03.jpg') }}');">
+        <img src="{{ url('img/bg2.png') }}" style="background-image: url('{{ url('img/galeri-3.jpg') }}');">
         <div class="overlay"></div>
         <div class="container-fluid containerCenter alignCenter wh">
           <h2 class="mg-b-20">What are you waiting for?</h2>
