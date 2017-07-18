@@ -54,7 +54,7 @@
             No. rekening :<br>
             Bank : BANK INI<br>
             Atas Nama : Daniel Da Lopez<br>
-            Jumlah : Rp 30.000 x {{ $instagram->submitting_slot }} foto = <b>Rp {{ number_format(30000 * $instagram->submitting_slot, 0, ".", ".") }}</b><br><br>
+            Jumlah : Rp 10.000 x {{ $instagram->submitting_slot }} foto = <b>Rp {{ number_format(10000 * $instagram->submitting_slot, 0, ".", ".") }}</b><br><br>
             Ketentuan pembayaran/penyetoran :<br>
             </p>
             <ol>
