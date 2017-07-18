@@ -62,4 +62,11 @@ class User extends Authenticatable
             return $this->hasMany('App\MovieSubmission', 'user_id');
         }
     }
+
+    public function latestPayment() {
+        if($this->role_id == 1)
+        {
+            return $this->hasMany('App\PaymentConfirmation', 'user_id')->latest();
+        }
+    }
 }

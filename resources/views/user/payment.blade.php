@@ -62,39 +62,59 @@
         <div class="whiteSec pd-20 mg-b-30">
           <h3 class="mg-t-0">Payment</h3>
           <h4 class="mg-t-20">Keterangan</h4>
+          @if($user->isPaymentDone())
+          <p>Sudah lunas</p>
+          @else
           <p>Belum melakukan pembayaran</p>
+          @endif
+          @if($user->latestPayment->count() == 0)
           <a class="btn btn-purple-1" href="#" data-toggle="modal" data-target="#uploadPayment"><i class="fa fa-upload"></i><span> Upload Bukti Pembayaran</span></a>
+          @endif
           <h4 class="mg-t-20">Data</h4>
           <table class="table table-hover">
             <tbody>
               <tr>
                 <td>Kompetisi</td>
                 <td>:</td>
-                <td class="bold">Lorem ipsum dolor sit amet</td>
+                <td class="bold">{{ $user->getKategori() }}</td>
               </tr>
               <tr>
                 <td>Nama</td>
                 <td>:</td>
-                <td>Aliquam principes</td>
+                <td>{{ $user->name }}</td>
               </tr>
               <tr>
                 <td>Email</td>
                 <td>:</td>
-                <td>mail@mail.com</td>
+                <td>{{ $user->email }}</td>
               </tr>
+              @if($user->role_id == 1)
               <tr>
                 <td>Jumlah foto/film yang dilombakan</td>
                 <td>:</td>
-                <td>1</td>
+                <td>{{ $user->shortFilm->submitting_slot }}</td>
               </tr>
+              @endif
               <tr>
                 <td>Total Pembayaran</td>
                 <td>:</td>
-                <td>1</td>
+                @if($user->role_id == 1)
+                <td>Rp {{ number_format(60000 * $user->shortFilm->submitting_slot, 0, ".", ".") }}</td>
+                @else
+                <td>Rp {{ number_format(10000, 0, ".", ".") }}</td>
+                @endif
+              </tr>
+              <tr>
+                <td>Kiriman verifikasi</td>
+                <td>:</td>
+                @if($user->latestPayment->count() != 0)
+                <td><a href="{{ url('storage/pc') }}/{{ $news->photo_path }} }}">Sudah mengirimkan</a></td>
+                @else
+                <td>Belum mengirimkan</td>
+                @endif
               </tr>
             </tbody>
           </table>
-        <a href="#" class="btn btn-lightpurple"><span class="fa fa-edit"></span> Ubah</a> <a href="#" class="btn btn-purple-1"><span class="fa fa-lock"></span> Kunci Data</a>
         </div>
       </section>
     </div>
