@@ -25,19 +25,22 @@ Route::get('/concert', function () {
     return view('concert.short-film');
 });
 
-Route::get('/user', function () {
-    return view('user.dashboard');
+Route::group(['prefix' => 'user'], function () {
+    Route::group(['middleware' => 'auth'], function () {
+
+        Route::get('/', 'UserDashboardController@dashboard');
+        Route::get('payment', 'UserDashboardController@payment');
+        Route::get('upload', 'UserDashboardController@submission');
+        Route::post('payment', 'UserDashboardController@storePaymentConfirmation')->name('payment.upload');
+        Route::post('upload', 'UserDashboardController@storeSubmission')->name('submission.upload');
+
+    });
 });
-Route::get('/user/payment', function () {
-    return view('user.payment');
-});
-Route::get('/user/upload', function () {
-    return view('user.upload');
-});
+
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/', function () {
-            if(Auth::user()->role_id != 1) {
+            if(Auth::user()->role_id != 0) {
                 return redirect('home'); 
             }
             return view('admin.dashboard');

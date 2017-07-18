@@ -39,14 +39,14 @@
               <section class="progressSec">
                 <h2><i class="fa fa-credit-card-alt pur"></i></h2>
                 <h4 class="bold">Payment</h4>
-                <p class="gray">Status : <span class="black">-</span></p>
+                <p class="gray">Status : <span class="black">{{ ($user->isPaymentDone()) ? "Lunas" : "Belum melakukan pembayaran" }}</span></p>
               </section>
             </div>
             <div class="col-md-4">
               <section class="progressSec">
                 <h2><i class="fa fa-upload pur"></i></h2>
                 <h4 class="bold">Upload</h4>
-                <p class="gray">Status : <span class="black">-</span></p>
+                <p class="gray">Status : <span class="black">{{ ($user->isPaymentDone()) ? ($user->submissions()->count() . "/" . $user->shortFilm->submitting_slot) : "Anda harus melakukan pembayaran terlebih dahulu" }}</span></p>
               </section>
             </div>
           </section>

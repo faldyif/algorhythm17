@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function user() {
+    public function shortFilm() {
         if($this->role_id == 1)
         {
             return $this->hasOne('App\ShortFilmUser', 'user_id');
@@ -39,9 +39,27 @@ class User extends Authenticatable
         {
             return "Short Movie Competition";
         }
-        else
+        else if($this->role_id == 3)
         {
-            return "Concert Competition";
+            return "Concert";
+        }
+    }
+
+    public function isPaymentDone() {
+        if($this->role_id == 1)
+        {
+            return $this->paid_amount >= $this->shortFilm->submitting_slot * 60000; // biaya movie 60k
+        }
+        else if($this->role_id == 3)
+        {
+            return $this->paid_amount >= 10000; // biaya concert 10k
+        }
+    }
+
+    public function submissions() {
+        if($this->role_id == 1)
+        {
+            return $this->hasMany('App\MovieSubmission', 'user_id');
         }
     }
 }
