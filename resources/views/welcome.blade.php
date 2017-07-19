@@ -2,7 +2,7 @@
 
 @section('content')
     <!--HEADER-->
-    <div class="header" style="background-image: url('{{ url('img/bg-banner02.jpg') }}');">
+    <div class="header" style="background-image: url('{{ url('img/bg-banner.jpg') }}');">
       <div class="bg-color">
         <header id="main-header">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -26,8 +26,12 @@
                 <li class=""><a href="#news">news</a></li>
                 <li class=""><a href="#about">about</a></li>
                 <li class=""><a href="#contact">Contact Us</a></li>
+                @if(Auth::guest())
                 <li class=""><a href="{{ url('register') }}">Register</a></li>
                 <li class=""><a href="{{ url('login') }}">Login</a></li>
+                @else
+                <li class=""><a href="{{ url('user') }}">Dashboard</a></li>
+                @endif
               </ul>
             </div>
           </div>
@@ -242,48 +246,48 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
         <div class="row">
           <div class="col-md-12 text-center">
             <h2 class="service-title pad-bt15">GALLERY</h2>
-            <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="sub-title pad-bt15">We don't remember days, we remember memories. That's why let's take a look at old memory of us.</p>
             <hr class="bottom-line">
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port01.jpg') }}" data-rel="lightcase:galleryCollection" title="Vix eu etiam mediocrem">
+            <a href="{{ url('img/galeri-1.jpg') }}" data-rel="lightcase:galleryCollection" title="Vix eu etiam mediocrem">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port01.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-1.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port02.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-2.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port02.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-2.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port03.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-3.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port03.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-3.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port04.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-4.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port04.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-4.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port05.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-5.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port05.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-5.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/port06.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-6.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
               <figure class="pd-lr-10 pd-bt-20">
-                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/port06.jpg') }}');">
+                <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-6.jpg') }}');">
               </figure>
             </a>
           </div>
@@ -293,7 +297,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
     <!---->
     <section class="register-home wow fadeInUp delay-05s hidden-mobile">
       <figure>
-        <img src="{{ url('img/bg2.png') }}" style="background-image: url('{{ url('img/port03.jpg') }}');">
+        <img src="{{ url('img/bg2.png') }}" style="background-image: url('{{ url('img/galeri-3.jpg') }}');">
         <div class="overlay"></div>
         <div class="container-fluid containerCenter alignCenter wh">
           <h2 class="mg-b-20">What are you waiting for?</h2>
