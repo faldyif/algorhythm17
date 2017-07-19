@@ -13,6 +13,7 @@
         <div class="modal-body">
           <div class="pd-20">
             <form method="POST" action="" class="form-black">
+              {{ csrf_field() }}
               <div class="form-group">
                 <label class="control-label">Link : </label>
                 <input type="text" name="team" id="team" placeholder="alamat link" class="form-control" >

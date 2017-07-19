@@ -12,6 +12,7 @@
         <div class="modal-body">
           <div class="pd-20">
             <form method="POST" action="" class="form-black">
+              {{ csrf_field() }}
               <div class="form-group">
                 <label class="control-label">Nama : </label>
                 <input type="text" name="team" id="team" value="Namanya siapa" class="form-control" disabled>
@@ -63,7 +64,9 @@
           <h3 class="mg-t-0">Payment</h3>
           <h4 class="mg-t-20">Keterangan</h4>
           <p>Belum melakukan pembayaran</p>
-          <a class="btn btn-purple-1" href="#" data-toggle="modal" data-target="#uploadPayment"><i class="fa fa-upload"></i><span> Upload Bukti Pembayaran</span></a>
+          <a class="btn btn-purple-1" href="#" data-toggle="modal" data-target="#uploadPayment">
+            <i class="fa fa-upload"></i><span> Upload Bukti Pembayaran</span>
+          </a>
           <h4 class="mg-t-20">Data</h4>
           <table class="table table-hover">
             <tbody>
