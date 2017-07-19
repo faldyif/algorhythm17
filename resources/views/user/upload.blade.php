@@ -37,7 +37,9 @@
               <ul class="nav nav-db">
                 <li><a class="" href="{{ url('user') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                 <li><a class="" href="{{ url('user/payment') }}"><i class="fa fa-credit-card-alt"></i><span>Payment</span></a></li>
+                @if($user->isPaymentDone())
                 <li><a class="active" href="{{ url('user/upload') }}"><i class="fa fa-upload"></i><span>Upload</span></a></li>
+                @endif
               </ul>
             </div>
         </nav>
@@ -55,23 +57,21 @@
               <tr>
                 <td colspan="2">Kompetisi</td>
                 <td>:</td>
-                <td class="bold">Lorem ipsum dolor sit amet</td>
+                <td class="bold">Short Movie Contest</td>
               </tr>
+              @foreach($user->submissions as $key)
               <tr>
-                <td>1</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>Link</td>
                 <td>:</td>
-                <td><a href="https://github.com/Titihanifah/frontend-Algorhythm" target="_blank">https://github.com/Titihanifah/frontend-Algorhythm</a></td>
+                <td><a href="{{ $key->drive_link }}" target="_blank">{{ $key->drive_link }}</a></td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Link</td>
-                <td>:</td>
-                <td><a href="https://github.com/Titihanifah/frontend-Algorhythm" target="_blank">https://github.com/Titihanifah/frontend-Algorhythm</a></td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
+        @if($user->submissions->count() < $user->shortFilm->submitting_slot && $user->isPaymentDone())
         <a href="#" data-toggle="modal" data-target="#uploadModal" class="btn btn-purple-1"><span class="fa fa-upload"></span> Tambah Data</a>
+        @endif
         </div>
       </section>
     </div>
