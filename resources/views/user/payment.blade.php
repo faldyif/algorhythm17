@@ -11,17 +11,17 @@
       </div>
       <div class="modal-body">
         <div class="pd-20">
-          <form method="POST" action="" class="form-black">
+          <form method="POST" action="" class="form-black" id="paymentForm">
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label">Nama : </label>
-              <input type="text" name="team" id="team" value="Namanya siapa" class="form-control" disabled>
+              <input type="text" name="team" id="team" class="form-control" value="{{ $shortfilm->team_name }}" disabled>
             </div>
             <div class="form-group">
               <label class="control-label openSansSemiBold">Jumlah Bayar</label>
               <div class="input-group">
                 <span class="input-group-addon">Rp</span>
-                <input type="number" class="form-control" name="phone_number" placeholder="Nomor Telepon" value="000000" disabled>
+                <input type="number" class="form-control" name="amount" id="amount" value='{{  60000 * $user->shortFilm->submitting_slot }}' disabled>
               </div>
             </div>
             <div class="form-group">
@@ -29,7 +29,7 @@
               <div class="previewPhoto" style="width : 225px ;">
                 <img src="" id="previewGallery">
               </div>
-              <input type="file" id="photoUpload" name="paymentPhoto" class="form-control" accept=".jpg, .jpeg, .png, .gif" />
+              <input type="file" id="photoUpload" name="photo" class="form-control" accept=".jpg, .jpeg, .png, .gif" />
             </div>
             <div class="form-group">
               <input type="submit" name="submit" class="btn btn-info" value="Upload" />
