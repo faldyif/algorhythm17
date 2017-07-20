@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
         <div class="pd-20">
-          <form method="POST" action="" class="form-black" id="paymentForm">
+          <form method="POST" action="" class="form-black" id="paymentForm" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label">Nama : </label>
