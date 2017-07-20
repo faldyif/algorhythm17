@@ -23,7 +23,7 @@
 <div class="contentSide flatWhiteSec col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 pd-t-db">
       <section class="pd-20 mg">
         <div class="whiteSec pd-20 mg-b-30">
-          <h3 class="mg-t-0">Welcome Message</h3>
+          <h3 class="mg-t-0">Welcome, {{ $user->name }}</h3>
           <p>Eam no eripuit noluisse intellegebat. Nominavi mnesarchum ad eam, pro dico recteque id, cu dicant audiam mel. At eum mazim dolore aliquid, id sed quas saepe doming. Atomorum assentior ne pri, ut cum fugit facilis electram.</p> 
           <p>Informasi penting atau step selanjutnya yang harus user lakukan</p>         
         </div>

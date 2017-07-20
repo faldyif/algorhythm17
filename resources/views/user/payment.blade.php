@@ -15,13 +15,13 @@
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label">Nama : </label>
-              <input type="text" name="team" id="team" class="form-control" value="{{ $shortfilm->team_name }}" disabled>
+              <input type="text" name="team" id="team" class="form-control" value="{{ $shortfilm->team_name }}" readonly/>
             </div>
             <div class="form-group">
               <label class="control-label openSansSemiBold">Jumlah Bayar</label>
               <div class="input-group">
                 <span class="input-group-addon">Rp</span>
-                <input type="number" class="form-control" name="amount" id="amount" value='{{  60000 * $user->shortFilm->submitting_slot }}' disabled>
+                <input type="number" class="form-control" name="amount" id="amount" />
               </div>
             </div>
             <div class="form-group">
@@ -113,7 +113,7 @@
               <td>Kiriman verifikasi</td>
               <td>:</td>
               @if($user->latestPayment->count() != 0)
-              <td><a href="{{ url('storage/pc') }}/{{ $news->photo_path }} }}">Sudah mengirimkan</a></td>
+              <td><a href="{{ url('storage/pc') }}/{{ $payment->photo_path }}" target="_blank">Sudah mengirimkan</a></td>
               @else
               <td>Belum mengirimkan</td>
               @endif
