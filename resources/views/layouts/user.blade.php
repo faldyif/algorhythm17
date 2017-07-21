@@ -75,14 +75,14 @@
       <script src="{{ url('js/wow.js') }}"></script>
       <script src="{{ url('js/jquery.bxslider.min.js') }}"></script>
       <script src="{{ url('js/custom.js') }}"></script>
-      <script type="text/javascript" src="{{ url('js/bootstrap.min.js') }}"></script>
-      <script type="text/javascript" src="{{ url('js/modernizr.js') }}"></script>
+      <!-- <script type="text/javascript" src="{{ url('js/bootstrap.min.js') }}"></script> -->
+      <!-- <script type="text/javascript" src="{{ url('js/modernizr.js') }}"></script>
       <script type="text/javascript" src="{{ url('js/jquery.nicescroll.min.js') }}"></script>
       <script type="text/javascript" src="{{ url('js/lightcase.js') }}"></script>
       <script type="text/javascript" src="{{ url('js/wow.min.js') }}"></script>
       <script type="text/javascript" src="{{ url('js/owl.carousel.min.js') }}"></script>
       <script type="text/javascript" src="{{ url('js/jquery.js') }}"></script>
-      <script type="text/javascript" src="{{ url('js/sweetalert.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url('js/sweetalert.min.js') }}"></script> -->
       <script type="text/javascript">
         $(document).ready(function(){
         // wow js

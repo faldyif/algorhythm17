@@ -670,8 +670,11 @@ h2.bnr-sub-title {
 ol li {
   list-style-type: decimal; }
 
-ul.circle li {
+.circle li {
   list-style-type: circle; }
+
+.square li {
+  list-style-type: square; }
 
 /* --- Navbar --- */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -786,8 +789,20 @@ homepage
   .header h2:after {
     right: 0; }
 
-#timeline {
+#timeline, #sponsor {
   background-color: #f7f7f7; }
+
+#sponsor figure img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(1);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out; }
+  #sponsor figure img:hover {
+    filter: grayscale(0); }
 
 .register-home h2 {
   text-transform: uppercase; }
