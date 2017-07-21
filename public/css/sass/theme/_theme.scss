@@ -3,9 +3,14 @@ ol {
         list-style-type: decimal;
     }
 }
-ul.circle {
+.circle {
     li {
         list-style-type: circle;
+    }
+}
+.square {
+    li {
+        list-style-type: square;
     }
 }
 /* --- Navbar --- */
@@ -130,8 +135,21 @@ homepage
     	}
     }
 }
-#timeline {
-	background-color: $flatwhite;
+#timeline,#sponsor {
+    background-color: $flatwhite;
+}
+#sponsor {
+    figure {
+        img {
+            @include img-bg();
+            filter: grayscale(1);
+            @include transition(0.3);
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
 }
 .register-home {
 	h2 {

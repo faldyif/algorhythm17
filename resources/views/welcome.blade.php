@@ -60,7 +60,7 @@
           <div class="col-md-12 text-center">
             <h2 class="service-title pad-bt15">ALGORHYTHM 2017</h2>
             <p class="sub-title pad-bt15">Annual Gorgeous Creativity with Your Rhythm</p>
-            <p class="normal">Algorhythm UGM merupakan acara tahunan Himpunan Mahasiswa Komputer dan Sistem Informasi (Himakomsi) UGM yang bertujuan untuk memperingati ulang tahun Himakomsi dan program studi Komputer dan Sistem Informasi.
+            <p class="normal">Algorhythm UGM merupakan acara tahunan Himpunan Mahasiswa Komputer dan Sistem Informasi (Himakomsi) UGM yang bertujuan untuk memperingati ulang tahun Himakomsi.
 Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan mengangkat tema “<b>Forever Young</b>”. Algorhythm UGM kali ini terdiri dari beberapa rangkaian acara.</p>
             <hr class="bottom-line">
           </div>
@@ -77,7 +77,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>S</span>hort Film Competition</h3>
                     <!-- <h3 class="pur">"Nostalgia"</h3> -->
                     <p class="black">Algorhythm Short Film Competition merupakan sebuah kompetisi film pendek yang diperuntukkan bagi seluruh kalangan untuk menggali kreativitas, khasanah budaya yang dimilikinya dan menuangkannya ke dalam rekaman gambar yang mampu bercerita. Dengan mengangkat tema “<strong>Nostalgia</strong>”, diharapkan agar peserta dapat bercerita dan berbagi tentang sebuah kenangan di masa lampau. </p>
-                    <a href="{{ url('short-film') }}">Learn more ...</a>
+                    <!-- <a href="{{ url('short-film') }}">Learn more ...</a> --><a>Coming Soon</a>
                   </div>
                 </div>
               </section>
@@ -107,7 +107,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>C</span>oncert</h3>
                     <!-- <h3 class="pur">"A Night To Remember"</h3> -->
                     <p class="black">Kegiatan ini merupakan acara puncak dari ALGORHYTHM 2017. Konser Algorhythm mengangkat tema “<strong>A Night to Remember</strong>” bertujuan untuk untuk merayakan ulang tahun program studi KOMSI, serta menumbuhkan solidaritas antar mahasiswa KOMSI. Dengan adanya konser ini juga diharapkan dapat menciptakan suatu acara dengan suasana yang mengenang dan berkesan bagi seluruh keluarga KOMSI maupun para penonton konser</p>
-                    <a href="{{ url('concert') }}">Learn more ...</a>
+                    <!-- <a href="{{ url('concert') }}">Learn more ...</a> --> <a>Coming Soon</a>
                   </div>
                 </div>
               </section>
@@ -136,6 +136,8 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
 
                     <div class="tab-content pd-lr-20">
                         <div id="one" class="tab-pane fade in active">
+                        <h2 class="alignCenter mg-bt-30">Coming Soon!</h2>
+                        <!--
                           <div class="timeline-section row">
                             <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">17 Juli - 17 Oktober 2017</p>
                             <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
@@ -167,18 +169,8 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                             </div>
                             <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
                               <div class="pd-lr-15">
-                                <h3 class="mg-t-10">Pengumuman Seleksi dan Penjurian oleh Panitia</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">28 Oktober 2017</p>
-                            <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
-                              <div class="pd-lr-15">
-                                <h3 class="mg-t-10">Penjurian Finalis oleh Juri</h3>
+                                <h3 class="mg-t-10">Pengumuman 10 Finalis</h3>
+                                <p>Pengumuman 10 besar finalis Short Film Competition</p>
                               </div>
                             </div>
                           </div>
@@ -194,10 +186,11 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                               </div>
                             </div>
                           </div>
+                          -->
                         </div>
                         <div id="two" class="tab-pane fade">
                           <div class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">10 Juli - 31 Agustus 2017</p>
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">11 Juli - 31 Agustus 2017</p>
                             <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
                               <i class="fa fa-calendar"></i>
                             </div>
@@ -250,42 +243,42 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
             <hr class="bottom-line">
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-1.jpg') }}" data-rel="lightcase:galleryCollection" title="Vix eu etiam mediocrem">
+            <a href="{{ url('img/galeri-1.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-1.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-2.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-2.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-2.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-3.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-3.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-3.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-4.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-4.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-4.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-5.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-5.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-5.jpg') }}');">
               </figure>
             </a>
           </div>
           <div class="col-md-4 col-sm-6">
-            <a href="{{ url('img/galeri-6.jpg') }}" data-rel="lightcase:galleryCollection" title="Delenit utroque vivendo est ea">
+            <a href="{{ url('img/galeri-6.jpg') }}" data-rel="lightcase:galleryCollection" title="">
               <figure class="pd-lr-10 pd-bt-20">
                 <img src="{{ url('img/bg-img.png') }}" style="background-image: url('{{ url('img/galeri-6.jpg') }}');">
               </figure>
@@ -338,6 +331,8 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
     </section>
     <!---->
     <!---->
+    <!-- 
+        Testimoni di hidden sek
     <section id="testimonial" class="wow fadeInUp delay-05s">
       <div class="bg-testicolor">
         <div class="container section-padding">
@@ -378,7 +373,9 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
         </div>
       </div>
     </section>
-    <!---->
+    -->
+    
+    
     <section id="about" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
         <div class="row">
@@ -391,7 +388,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
         <section class="row">
           <div class="col-md-6 noPad mg-b-20">
             <figure>
-              <img src="{{ url('img/hima-all.JPG') }}">
+              <img src="{{ url('img/hima-all.jpg') }}">
             </figure>
           </div>
           <div class="col-md-6 small mg-b-20">
@@ -411,6 +408,29 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
         </section>
       </div>
     </section>
+    
+    <!---->
+    <!--<section id="sponsor" class="section-padding wow fadeInUp delay-05s">-->
+    <!--  <div class="container">-->
+    <!--    <div class="row">-->
+    <!--      <div class="col-md-12 text-center">-->
+    <!--        <h2 class="service-title pad-bt15">SPONSORS &amp MEDIA PARTNER</h2>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--    <section class="row">-->
+    <!--      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">-->
+    <!--        <h3 class="alignCenter mg-b-20">SPONSORS</h3>-->
+    <!--      </div>-->
+    <!--    </section>-->
+    <!--    <section class="row">-->
+    <!--      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">-->
+    <!--        <h3 class="alignCenter mg-b-20">MEDIA PARTNER</h3>-->
+    <!--      </div>-->
+    <!--    </section>-->
+    <!--  </div>-->
+    <!--</section>-->
+    <!---->
+    
     <!---->
     <section id="contact" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
@@ -424,7 +444,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
             <div class="loction-info white">
               <p><i class="fa fa-map-marker fa-fw pull-left fa-2x pur"></i>Gedung Sekolah Vokasi<br>Universitas Gadjah Mada</p>
               <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x pur"></i>algorhythmugm@gmail.com</p>
-              <p><i class="fa fa-phone fa-fw pull-left fa-2x pur"></i>+41 5787 2323</p>
+              <p><i class="fa fa-phone fa-fw pull-left fa-2x pur"></i>+62 838 4537 7293</p>
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">

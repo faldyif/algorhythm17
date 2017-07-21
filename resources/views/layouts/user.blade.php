@@ -16,11 +16,8 @@
       'csrfToken' => csrf_token(),
       ]); ?>
     </script>
-
-
     <!-- Shortcut icon -->
     <link rel="shortcut icon" type="x-icon" href="../img/icon.png">
-
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.bxslider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
@@ -35,7 +32,6 @@
       }
     </style>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
-
   <!-- =======================================================
       Theme Name: Baker
       Theme URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
@@ -69,10 +65,7 @@
         </nav>
         <!--  -->
         <!-- aside -->
-
-
         @yield('content')
-
       </section>
       <!-- /aside -->
       <script src="{{ asset('js/jquery.easing.min.js') }}"></script>

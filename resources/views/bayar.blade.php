@@ -51,15 +51,15 @@
         <section class="mypills-center">        
           <section>
             <p>Calon peserta yang telah mengisi form pendaftaran online wajib melakukan penyetoran biaya pendaftaran melalui:<br>
-            No. rekening :<br>
-            Bank : BANK INI<br>
-            Atas Nama : Daniel Da Lopez<br>
+            No. rekening : 0394329105<br>
+            Bank : BNI<br>
+            Atas Nama : Rosmawarda Yunarya<br>
             Jumlah : Rp 10.000 x {{ $instagram->submitting_slot }} foto = <b>Rp {{ number_format(10000 * $instagram->submitting_slot, 0, ".", ".") }}</b><br><br>
             Ketentuan pembayaran/penyetoran :<br>
             </p>
             <ol>
               <li>Maksimal pembayaran H+5 dari Regisrtrasi Pendaftaran di web Algorhythm</li>
-              <li>Foto bukti pembayaran dikirim ke Line, WA, atau email Algorhythm beserta format pesan IGCAlgo_[Nama]_[ID Instagram]_[Judul Foto]</li>
+              <li>Foto bukti pembayaran dikirim ke email Algorhythm (<span class="bl">algorhythmugm@gmail.com</span>) beserta format pesan IGCAlgo_[Nama]_[ID Instagram]_[Judul Foto]</li>
               <li>Penyetoran biaya pendaftaran dinyatakan sah apabila dilakukan pada rekening yang tertera diatas.</li>
             </ol>
           </section>
