@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 // Custom class
@@ -29,7 +30,8 @@ class UserDashboardController extends Controller
     public function payment()
     {
         $user = Auth::user();
-        return View('user.payment')->with('user', $user);
+        $shortfilm = DB::table('short_film_users')->where('user_id', $user->id)->first() ;
+        return View('user.payment', ['user' => $user, 'shortfilm' => $shortfilm]);
     }
 
     public function storeSubmission(Request $request)
