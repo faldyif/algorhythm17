@@ -77,7 +77,7 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                     <h3><span>S</span>hort Film Competition</h3>
                     <!-- <h3 class="pur">"Nostalgia"</h3> -->
                     <p class="black">Algorhythm Short Film Competition merupakan sebuah kompetisi film pendek yang diperuntukkan bagi seluruh kalangan untuk menggali kreativitas, khasanah budaya yang dimilikinya dan menuangkannya ke dalam rekaman gambar yang mampu bercerita. Dengan mengangkat tema “<strong>Nostalgia</strong>”, diharapkan agar peserta dapat bercerita dan berbagi tentang sebuah kenangan di masa lampau. </p>
-                    <!-- <a href="{{ url('short-film') }}">Learn more ...</a> --><a>Coming Soon</a>
+                     <a href="{{ url('short-film') }}">Learn more ...</a> 
                   </div>
                 </div>
               </section>
@@ -136,17 +136,15 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
 
                     <div class="tab-content pd-lr-20">
                         <div id="one" class="tab-pane fade in active">
-                        <h2 class="alignCenter mg-bt-30">Coming Soon!</h2>
-                        <!--
                           <div class="timeline-section row">
-                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">17 Juli - 17 Oktober 2017</p>
+                            <p class="col-md-2 col-sm-2 col-xs-2 alignRight mg-t-10">22 Juli - 17 Oktober 2017</p>
                             <div class="line-ver col-md-1 col-sm-2 col-xs-2 hidden-mobile">
                               <i class="fa fa-calendar"></i>
                             </div>
                             <div class="col-md-9 col-sm-8 col-xs-10 whiteSec noPad mg-bt-10">
                               <div class="pd-lr-15">
-                                <h3 class="mg-t-10">Pendaftaran</h3>
-                                <p>Pendaftaran Short Film Competition</p>
+                                <h3 class="mg-t-10">Pendaftaran dan Pengumpulan Karya</h3>
+                                <p>Pendaftaran dan Pengumpulan Karya Short Film Competition</p>
                               </div>
                             </div>
                           </div>
@@ -186,7 +184,6 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
                               </div>
                             </div>
                           </div>
-                          -->
                         </div>
                         <div id="two" class="tab-pane fade">
                           <div class="timeline-section row">
@@ -410,25 +407,39 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
     </section>
     
     <!---->
-    <!--<section id="sponsor" class="section-padding wow fadeInUp delay-05s">-->
-    <!--  <div class="container">-->
-    <!--    <div class="row">-->
-    <!--      <div class="col-md-12 text-center">-->
-    <!--        <h2 class="service-title pad-bt15">SPONSORS &amp MEDIA PARTNER</h2>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <section class="row">-->
-    <!--      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">-->
-    <!--        <h3 class="alignCenter mg-b-20">SPONSORS</h3>-->
-    <!--      </div>-->
-    <!--    </section>-->
-    <!--    <section class="row">-->
-    <!--      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">-->
-    <!--        <h3 class="alignCenter mg-b-20">MEDIA PARTNER</h3>-->
-    <!--      </div>-->
-    <!--    </section>-->
-    <!--  </div>-->
-    <!--</section>-->
+    <section id="sponsor" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">SPONSORS &amp MEDIA PARTNER</h2>
+          </div>
+        </div>
+        <section class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+            <h3 class="alignCenter mg-b-20">SPONSORS</h3>
+            <section class="row">
+              <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4 col-xs-offset-2 col-xs-8 noPad mg-b-20">
+                <figure class="pd-lr-10">
+                  <img src="./img/bg-img.png" style="background-image: url('./img/uber.png');">
+                </figure>
+              </div>
+            </section>
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+            <h3 class="alignCenter mg-b-20">MEDIA PARTNER</h3>
+            <section class="row">
+              <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4 col-xs-offset-2 col-xs-8 noPad mg-b-20">
+                <figure class="pd-lr-10">
+                  <img src="./img/bg-img.png" style="background-image: url('./img/seputar-event.png');">
+                </figure>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
     <!---->
     
     <!---->
