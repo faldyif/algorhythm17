@@ -430,9 +430,14 @@ Tahun ini merupakan tahun ke lima penyelenggaraan Algorhythm UGM dan dengan meng
           <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
             <h3 class="alignCenter mg-b-20">MEDIA PARTNER</h3>
             <section class="row">
-              <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4 col-xs-offset-2 col-xs-8 noPad mg-b-20">
+              <div class="col-md-offset-2 col-sm-offset-2 col-md-4 col-sm-4 col-xs-6 noPad mg-b-20">
                 <figure class="pd-lr-10">
                   <img src="./img/bg-img.png" style="background-image: url('./img/seputar-event.png');">
+                </figure>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-6 noPad mg-b-20">
+                <figure class="pd-lr-10">
+                  <img src="./img/bg-img.png" style="background-image: url('./img/potretjogja.jpeg');">
                 </figure>
               </div>
             </section>
