@@ -107,12 +107,12 @@
                         </ul>
                     </li>
                     <li>Bagi peserta sudah melakukan pembayaran, panitia akan mengirimkan ID Foto ke peserta dengan menghubungi kontak yang ada di form.</li>
-                    <li>Peserta mengunggah foto yang dilombakan di instagram masing - masing dengan caption foto yang berisi <strong>ID Foto</strong>, <strong>Judul Foto</strong>, dan <strong>deskripsi foto</strong>, serta mencantumkan hastag berupa: #MEMORABLEPLACE, #HIMAKOMSIUGM, #ALGORHYTHM2017 dan menandai akun instagram @algorhythmugm.
+                    <li>Peserta mengunggah foto yang dilombakan di instagram masing - masing dengan caption foto yang berisi <strong>ID Foto</strong>, <strong>Judul Foto</strong>, dan <strong>deskripsi foto</strong>, serta mencantumkan hastag berupa: #MEMORABLEPLACE, #HIMAKOMSIUGM, #ALGORHYTHMUGM dan menandai akun instagram @algorhythmugm.
                         <br> Contoh :
                         <br> [IGCALGO1000]
                         <br> “Sekolahku” 
                         <br> 6 tahun yang lalu aku berada di sini bersama teman-temanku
-                        <br> #MEMORABLEPLACE #HIMAKOMSIUGM #ALGORHYTHM2017 
+                        <br> #MEMORABLEPLACE #HIMAKOMSIUGM #ALGORHYTHMUGM 
                     </li>
                     <li>Foto yang diunggah sesuai dengan ketentuan dan syarat Instagram Competition akan di repost oleh Panitia melalui akun Instagram @algorhythmugm pada tanggal 1 September 2017.</li>
                   </ol> 
@@ -121,7 +121,7 @@
                     <li>Peserta mendatangi stand Algorhythm di Lobby Sekolah Vokasi UGM mulai tanggal 15 Agustus 2017 dan melakukan pendaftaran dengan mengisi form yang disediakan.</li>
                     <li>Peserta membayar biaya pendaftaran Rp 10.000,00/Foto.</li>
                     <li>Peserta mendapat kwitansi, ID, dan format pengiriman foto.</li>
-                    <li>Peserta mengunggah foto yang dilombakan di instagram masing-masing dengan caption foto yang berisi ID Foto, Judul Foto, dan deskripsi foto, serta mencantumkan hastag berupa: #MEMORABLEPLACE, #HIMAKOMSIUGM, #ALGORHYTHM2017 dan menandai akun instagram @algorhythmugm.</li>
+                    <li>Peserta mengunggah foto yang dilombakan di instagram masing-masing dengan caption foto yang berisi ID Foto, Judul Foto, dan deskripsi foto, serta mencantumkan hastag berupa: #MEMORABLEPLACE, #HIMAKOMSIUGM, #ALGORHYTHMUGM dan menandai akun instagram @algorhythmugm.</li>
                     <li>Panitia me-repost foto dari peserta di akun Instagram @algorhythmugm.</li>
                   </ol>
                 </section>
