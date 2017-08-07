@@ -15,8 +15,20 @@
             <form method="POST" action="" class="form-black">
               {{ csrf_field() }}
               <div class="form-group">
+                <label for="movie_title" class="control-label">Title</label>
+                <input type="text" name="movie_title" id="movie_link" class="form-control" placeholder="Judul Shortfilm" required />
+              </div>
+              <div class="form-group">
+                <label for="film_maker_name" class="control-label">Film Maker</label>
+                <input type="text" name="film_maker_name" id="film_maker_name" class="form-control" placeholder="Nama Pembuat Film" required/>
+              </div>
+              <div class="form-group">
+                <label for="production_year" class="control-label">Production Year</label>
+                <input type="number" name="production_year" id="production_year" class="form-control" placeholder="Tahun Produksi" required />
+              </div>
+              <div class="form-group">
                 <label class="control-label">Link : </label>
-                <input type="text" name="team" id="team" placeholder="alamat link" class="form-control" >
+                <input type="text" name="drive_link" id="drive_link" placeholder="URL Google Drive" class="form-control" required />
               </div>
               <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-info" value="Upload" />

@@ -31,7 +31,8 @@ class UserDashboardController extends Controller
     {
         $user = Auth::user();
         $shortfilm = DB::table('short_film_users')->where('user_id', $user->id)->first() ;
-        return View('user.payment', ['user' => $user, 'shortfilm' => $shortfilm]);
+        $payment = DB::table('payment_confirmations')->where('user_id', $user->id)->first() ;
+        return View('user.payment', ['user' => $user, 'shortfilm' => $shortfilm, 'payment' => $payment]);
     }
 
     public function storeSubmission(Request $request)
